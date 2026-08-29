@@ -1,0 +1,11 @@
+# R history & workspace
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj.user
+
+# Mac/OSX temporary files
+.DS_Store
+
+# R library folder override
+library/
