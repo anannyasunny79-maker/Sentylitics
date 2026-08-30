@@ -10,4 +10,4 @@ if (length(missing_packages) > 0) {
 }
 
 message("Launching Sentilytics...")
-shiny::runApp(".", launch.browser = TRUE)
+shiny::runApp(".", host = "127.0.0.1", port = 7860, launch.browser = TRUE)

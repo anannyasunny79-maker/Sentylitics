@@ -1,4 +1,4 @@
-setwd("C:/Users/anann/.gemini/antigravity-ide/scratch/college-feedback-sentiment-tool-R")
+# admin_test.R
 source("helpers/db.R")
 source("helpers/nlp.R")
 

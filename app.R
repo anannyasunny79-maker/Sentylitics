@@ -591,10 +591,201 @@ SHARED_CSS <- "
   /* Plotly charts — override transparent bg for light mode */
   .portal-body .js-plotly-plot .plotly { background: transparent !important; }
 
+  /* Plotly charts — override transparent bg for light mode */
+  .portal-body .js-plotly-plot .plotly { background: transparent !important; }
 
   /* ================================================================
-     RESPONSIVE
+     STUDENT PORTAL — RICH DARK FOREST GREEN & VIBRANT GRADIENT THEME
   ================================================================ */
+  .student-portal-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    font-family: 'Inter', -apple-system, sans-serif;
+  }
+
+  /* Dark Glass Cards */
+  .student-portal-wrapper .glass-card {
+    background: #0d2b1f !important;
+    border: 1px solid rgba(255, 255, 255, 0.16) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    padding: 24px 28px !important;
+    transition: all 0.2s ease !important;
+  }
+  .student-portal-wrapper .glass-card:hover {
+    border-color: rgba(16, 185, 129, 0.35) !important;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35), 0 0 15px rgba(16, 185, 129, 0.15) !important;
+  }
+
+  /* Stunning Vibrant Headings & Typography */
+  .student-portal-wrapper .student-main-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 2.3rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #a7f3d0 50%, #38bdf8 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin: 0 0 4px 0 !important;
+    letter-spacing: -0.01em !important;
+  }
+  .student-portal-wrapper .student-main-sub {
+    font-size: 0.9rem !important;
+    color: #cbd5e1 !important;
+    margin: 0 !important;
+  }
+
+  /* Attractive Step Card Section Titles */
+  .student-portal-wrapper .student-section-title {
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-size: 1.55rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, #ffffff 0%, #6ee7b7 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    margin-bottom: 18px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    border-bottom: 1.5px solid rgba(16, 185, 129, 0.3) !important;
+    padding-bottom: 12px !important;
+  }
+  .student-portal-wrapper .student-sub-title {
+    font-size: 0.84rem !important;
+    font-weight: 800 !important;
+    color: #38bdf8 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    margin-bottom: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+  }
+
+  /* Input Labels */
+  .student-portal-wrapper .control-label,
+  .student-portal-wrapper label {
+    color: #f8fafc !important;
+    font-weight: 700 !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Text Boxes — Dark Translucent #1A202C */
+  .student-portal-wrapper textarea,
+  .student-portal-wrapper input[type=text],
+  .student-portal-wrapper select,
+  .student-portal-wrapper .form-control {
+    background: #1A202C !important;
+    color: #f8fafc !important;
+    border: 1px solid #334155 !important;
+    border-radius: 10px !important;
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+    padding: 12px 14px !important;
+    outline: none !important;
+    transition: all 0.2s ease !important;
+    box-shadow: none !important;
+  }
+  .student-portal-wrapper textarea::placeholder,
+  .student-portal-wrapper input::placeholder {
+    color: #94a3b8 !important;
+    font-style: italic !important;
+  }
+  .student-portal-wrapper textarea:focus,
+  .student-portal-wrapper input:focus,
+  .student-portal-wrapper select:focus,
+  .student-portal-wrapper .form-control:focus {
+    background: #2D3748 !important;
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25) !important;
+    outline: none !important;
+  }
+
+  /* Vibrant Cyan & Emerald Sliders */
+  .student-portal-wrapper .irs--shiny .irs-line {
+    background: #1e3a2b !important;
+    height: 8px !important;
+    border-radius: 4px !important;
+  }
+  .student-portal-wrapper .irs--shiny .irs-bar {
+    background: linear-gradient(90deg, #10b981, #06b6d4) !important;
+    border: none !important;
+    height: 8px !important;
+    border-radius: 4px !important;
+  }
+  .student-portal-wrapper .irs--shiny .irs-handle {
+    background: #10b981 !important;
+    border: 2.5px solid #ffffff !important;
+    width: 22px !important;
+    height: 22px !important;
+    top: 21px !important;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.6) !important;
+    cursor: pointer !important;
+  }
+  .student-portal-wrapper .irs--shiny .irs-single {
+    background: #06b6d4 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    font-size: 13px !important;
+    border-radius: 6px !important;
+    padding: 3px 8px !important;
+    box-shadow: 0 2px 8px rgba(6, 182, 212, 0.4) !important;
+  }
+  .student-portal-wrapper .irs-min, 
+  .student-portal-wrapper .irs-max, 
+  .student-portal-wrapper .irs-grid-text {
+    color: #cbd5e1 !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+  }
+
+  /* Sticky Progress Header — Dark Glass */
+  .student-sticky-header {
+    position: sticky;
+    top: 12px;
+    z-index: 100;
+    background: #0d2b1f;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    padding: 16px 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(12px);
+    margin-bottom: 22px;
+  }
+
+  /* Step Indicator Pills */
+  .student-step-pill {
+    background: rgba(255, 255, 255, 0.06);
+    color: #cbd5e1;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 9999px;
+    padding: 7px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .student-step-pill:hover {
+    background: rgba(255, 255, 255, 0.14);
+    color: #ffffff;
+  }
+  .student-step-pill.active {
+    background: #10b981 !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    border-color: #34d399 !important;
+    box-shadow: 0 0 14px rgba(16, 185, 129, 0.5) !important;
+  }
+  .student-step-pill.completed {
+    background: rgba(16, 185, 129, 0.18);
+    color: #34d399;
+    border-color: rgba(16, 185, 129, 0.4);
+  }
+
+  /* Responsive Adjustments */
   @media (max-width: 900px) {
     .login-page  { flex-direction: column; }
     .login-left  { width: 100%; min-width: unset; min-height: 260px; padding: 36px 32px; }

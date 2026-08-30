@@ -1461,9 +1461,9 @@ adminPortalServer <- function(id, user, logout_trigger) {
           span(style = "font-weight:700; color:#3d5a2b;", status_msg)
         ),
         div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px; color:#475569;",
-          div(span("Sem 1 Positivity: "), b(sprintf("%.1f%%", first_pos))),
-          div(span("Latest Positivity: "), b(sprintf("%.1f%%", last_pos))),
-          div(span("Net Delta: "), b(style = if (delta >= 0) "color:#059669;" else "color:#ef4444;", sprintf("%s%.1f%%", if (delta>=0) "+" else "", delta)))
+          div(span("Sem 1 Positivity: "), tags$b(sprintf("%.1f%%", first_pos))),
+          div(span("Latest Positivity: "), tags$b(sprintf("%.1f%%", last_pos))),
+          div(span("Net Delta: "), tags$b(style = if (delta >= 0) "color:#059669;" else "color:#ef4444;", sprintf("%s%.1f%%", if (delta>=0) "+" else "", delta)))
         )
       )
     })
