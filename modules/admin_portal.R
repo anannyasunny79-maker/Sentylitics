@@ -30,12 +30,12 @@ ASPECT_LABELS <- c(
 )
 
 ASPECT_ICONS <- c(
-  teaching           = "🎓",
-  coursecontent      = "📚",
-  examination        = "📝",
-  labwork            = "🔬",
+  teaching = "🎓",
+  coursecontent = "📚",
+  examination = "📝",
+  labwork = "🔬",
   library_facilities = "📖",
-  extracurricular    = "🏆"
+  extracurricular = "🏆"
 )
 
 SEMESTER_ORDER <- c("Semester 1", "Semester 2", "Semester 3", "Semester 4",
@@ -46,7 +46,7 @@ format_teacher_badge <- function(teacher_name) {
   if (is.null(teacher_name) || is.na(teacher_name) || teacher_name == "" || teacher_name == "N/A") {
     return(span(class = "gw-teacher-badge-none", "Unassigned"))
   }
-  span(class = "gw-teacher-badge", sprintf("👨‍🏫 %s", teacher_name))
+  span(class = "gw-teacher-badge", sprintf("🧑‍🏫 %s", teacher_name))
 }
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -62,9 +62,9 @@ adminPortalUI <- function(id) {
         .gw-app {
           display: flex;
           min-height: 100vh;
-          font-family: 'Inter', sans-serif;
-          background-color: #f7faf6;
-          color: #1a2e23;
+          font-family: 'Poppins', sans-serif;
+          background-color: #e5e5e5;
+          color: #333333;
           font-size: 0.95rem;
         }
 
@@ -72,36 +72,36 @@ adminPortalUI <- function(id) {
         .gw-sidebar {
           width: 260px;
           background: #ffffff !important;
-          color: #1e3314 !important;
+          color: #333333 !important;
           display: flex;
           flex-direction: column;
           flex-shrink: 0;
           position: fixed;
           top: 0; bottom: 0; left: 0;
           z-index: 100;
-          border-right: 1px solid #dbe8d2 !important;
-          box-shadow: 2px 0 12px rgba(61,90,43,0.06);
+          border-right: 1px solid #e5e5e5 !important;
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
         }
         .gw-sidebar-brand {
           padding: 22px 20px;
           display: flex;
           align-items: center;
           gap: 12px;
-          border-bottom: 1px solid #e0ebd5;
-          background: #f4f8f2;
+          border-bottom: 1px solid #e5e5e5;
+          background: #ffffff;
         }
         .gw-brand-icon {
           width: 40px; height: 40px;
-          background: linear-gradient(135deg, #4a6b35 0%, #2e4720 100%) !important;
+          background: linear-gradient(135deg, #4272d7 0%, #3868cd 100%) !important;
           border-radius: 10px;
           display: flex; align-items: center; justify-content: center;
           color: #ffffff;
-          box-shadow: 0 4px 10px rgba(74,107,53,0.25);
+          box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
         }
         .gw-brand-name {
           font-weight: 800;
           font-size: 1.1rem;
-          color: #1e3314 !important;
+          color: #333333 !important;
           letter-spacing: -0.02em;
         }
         .gw-brand-sub {
@@ -131,7 +131,7 @@ adminPortalUI <- function(id) {
           gap: 10px;
           padding: 10px 14px;
           border-radius: 8px;
-          color: #2b451c !important;
+          color: #333333 !important;
           font-size: 0.88rem;
           font-weight: 600;
           background: transparent;
@@ -142,15 +142,15 @@ adminPortalUI <- function(id) {
           transition: all 0.15s ease;
         }
         .gw-nav-btn:hover {
-          background: #f0f5eb !important;
-          color: #1e3314 !important;
+          background: #f3f5f9 !important;
+          color: #333333 !important;
         }
         .gw-nav-btn.active {
-          background: #183d2e !important;
-          color: #ffffff !important;
+          background: #f3f5f9 !important;
+          color: #4272d7 !important;
           font-weight: 800 !important;
-          border-left: 4px solid #10b981 !important;
-          box-shadow: 0 4px 12px rgba(16,185,129,0.25) !important;
+          border-left: 4px solid #4272d7 !important;
+          box-shadow: 0 4px 12px rgba(66,114,215,0.25) !important;
         }
         .gw-nav-btn.active span, .gw-nav-btn.active div {
           color: #ffffff !important;
@@ -161,11 +161,11 @@ adminPortalUI <- function(id) {
         /* Sidebar user footer - BLACK WELCOME TEXT */
         .gw-sidebar-user {
           padding: 16px 20px;
-          border-top: 1px solid #e0ebd5;
+          border-top: 1px solid #e5e5e5;
           display: flex;
           align-items: center;
           justify-content: space-between;
-          background: #f4f8f2;
+          background: #ffffff;
         }
         .gw-user-info { display: flex; flex-direction: column; gap: 1px; }
         .gw-user-name {
@@ -175,7 +175,7 @@ adminPortalUI <- function(id) {
         }
         .gw-user-role {
           font-size: 0.72rem;
-          color: #4a6b35 !important;
+          color: #4272d7 !important;
           font-weight: 600;
         }
 
@@ -184,8 +184,8 @@ adminPortalUI <- function(id) {
           display: inline-flex;
           align-items: center;
           gap: 4px;
-          background: #f0f5eb;
-          color: #2b451c;
+          background: #f3f5f9;
+          color: #333333;
           font-weight: 700;
           padding: 3px 9px;
           border-radius: 6px;
@@ -227,7 +227,7 @@ adminPortalUI <- function(id) {
         .gw-header-title {
           font-size: 1.4rem;
           font-weight: 800;
-          color: #1e3314;
+          color: #333333;
           margin: 0;
           letter-spacing: -0.02em;
         }
@@ -247,7 +247,7 @@ adminPortalUI <- function(id) {
           display: flex;
           align-items: center;
           gap: 8px;
-          background: #f4f8f2;
+          background: #ffffff;
           border: 1px solid #d4e3ca;
           border-radius: 8px;
           padding: 4px 10px;
@@ -264,7 +264,7 @@ adminPortalUI <- function(id) {
           border: none !important;
           background: transparent !important;
           font-size: 0.85rem !important;
-          color: #1e3314 !important;
+          color: #333333 !important;
           font-weight: 700 !important;
           outline: none !important;
           cursor: pointer !important;
@@ -280,7 +280,7 @@ adminPortalUI <- function(id) {
         }
         .gw-scope-badge {
           display: inline-flex; align-items: center; gap: 4px;
-          background: #eef6ea; color: #2b451c;
+          background: #eef6ea; color: #333333;
           font-size: 0.75rem; font-weight: 700;
           padding: 3px 10px; border-radius: 9999px;
           border: 1px solid #d4e3ca;
@@ -306,7 +306,7 @@ adminPortalUI <- function(id) {
         .gw-card-title {
           font-size: 1rem;
           font-weight: 800;
-          color: #1e3314;
+          color: #333333;
           margin: 0 0 4px 0;
           display: flex; align-items: center; gap: 8px;
         }
@@ -332,11 +332,11 @@ adminPortalUI <- function(id) {
           flex-direction: column;
           gap: 8px;
           box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-          border-top: 4px solid #3d5a2b;
+          border-top: 4px solid #4272d7;
           transition: transform 0.2s;
         }
         .gw-kpi-card:hover { transform: translateY(-2px); }
-        .gw-kpi-card.tot { border-top-color: #1e3314; }
+        .gw-kpi-card.tot { border-top-color: #333333; }
         .gw-kpi-card.pos { border-top-color: #059669; }
         .gw-kpi-card.neg { border-top-color: #ef4444; }
         .gw-kpi-card.neu { border-top-color: #f59e0b; }
@@ -351,7 +351,7 @@ adminPortalUI <- function(id) {
         .gw-kpi-value {
           font-size: 2.2rem;
           font-weight: 800;
-          color: #1e3314;
+          color: #333333;
           line-height: 1;
         }
         .gw-kpi-sub { font-size: 0.78rem; color: #64748b; }
@@ -433,7 +433,7 @@ adminPortalUI <- function(id) {
         .gw-improve-dept-name {
           font-weight: 800;
           font-size: 0.95rem;
-          color: #1e3314;
+          color: #333333;
           margin: 0;
         }
         .gw-improve-dept-meta {
@@ -477,7 +477,7 @@ adminPortalUI <- function(id) {
         }
         .gw-action-item:last-child { border-bottom: none; }
         .gw-action-num {
-          width: 18px; height: 18px; background: #3d5a2b; color: #fff;
+          width: 18px; height: 18px; background: #4272d7; color: #fff;
           border-radius: 50%; font-size: 0.65rem; font-weight: 700;
           display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
@@ -491,7 +491,7 @@ adminPortalUI <- function(id) {
           margin-bottom: 18px;
         }
         .gw-settings-title {
-          font-weight: 800; font-size: 0.92rem; color: #1e3314; margin-bottom: 4px;
+          font-weight: 800; font-size: 0.92rem; color: #333333; margin-bottom: 4px;
         }
         .gw-settings-desc {
           font-size: 0.78rem; color: #64748b; margin-bottom: 14px;
@@ -571,7 +571,7 @@ adminPortalUI <- function(id) {
             # PDF export
             downloadButton(ns("export_pdf"),
               label = HTML("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' style='width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:2;vertical-align:middle;margin-right:4px;'><polyline points='6 9 6 2 18 2 18 9'/><path d='M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2'/><rect x='6' y='14' width='12' height='8'/></svg>Export PDF"),
-              style = "background:#3d5a2b;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:0.8rem;padding:7px 14px;height:36px;display:inline-flex;align-items:center;"
+              style = "background:#4272d7;color:#fff;border:none;border-radius:8px;font-weight:600;font-size:0.8rem;padding:7px 14px;height:36px;display:inline-flex;align-items:center;"
             )
           )
         ),
@@ -778,7 +778,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         div(class = "gw-card",
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;",
             p(class = "gw-card-title", style = "margin:0;", "📅 Timely Feedback Responses & Date Timeline"),
-            span(style = "font-size:0.75rem; color:#3d5a2b; font-weight:700; background:#eef6ea; padding:3px 10px; border-radius:9999px; border:1px solid #d4e3ca;", "Multi-Semester Chronological View")
+            span(style = "font-size:0.75rem; color:#4272d7; font-weight:700; background:#eef6ea; padding:3px 10px; border-radius:9999px; border:1px solid #d4e3ca;", "Multi-Semester Chronological View")
           ),
           p(class = "gw-card-sub", "Real-time timeline breakdown of submission volume and sentiment distribution across dates and academic semesters"),
           plotlyOutput(ns("chart_overview_timeline"), height = "280px")
@@ -804,7 +804,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;",
             p(class = "gw-card-title", style = "margin:0;", "🤖 AI Qualitative Insights & Action Items"),
             actionButton(ns("btn_refresh_ai"), "↻ Refresh Analysis",
-              style = "background:#3d5a2b; color:#fff; border:none; border-radius:6px; font-size:0.75rem; font-weight:600; padding:5px 12px;")
+              style = "background:#4272d7; color:#fff; border:none; border-radius:6px; font-size:0.75rem; font-weight:600; padding:5px 12px;")
           ),
           p(class = "gw-card-sub", "Automatic feedback text summary and generated action items"),
           uiOutput(ns("ai_insights_ui"))
@@ -871,12 +871,12 @@ adminPortalServer <- function(id, user, logout_trigger) {
           p(class = "gw-card-sub", "Tracking teacher rating evolution and positivity gains across consecutive semesters"),
           div(style = "display:grid; grid-template-columns: 1fr 1.2fr; gap:20px;",
             div(
-              p(style = "font-weight:700; font-size:0.85rem; color:#1e3314; margin-bottom:8px;", "🏆 Top Improved Faculty Leaderboard"),
+              p(style = "font-weight:700; font-size:0.85rem; color:#333333; margin-bottom:8px;", "🏆 Top Improved Faculty Leaderboard"),
               uiOutput(ns("teacher_improvement_leaderboard_ui"))
             ),
             div(
               div(style = "display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;",
-                p(style = "font-weight:700; font-size:0.85rem; color:#1e3314; margin:0;", "🔍 Faculty Multi-Semester Trajectory"),
+                p(style = "font-weight:700; font-size:0.85rem; color:#333333; margin:0;", "🔍 Faculty Multi-Semester Trajectory"),
                 div(style = "display:flex; gap:8px; align-items:center;",
                   selectInput(ns("inspector_dept_filter"), label = NULL, choices = c("All Departments" = "all"), width = "165px"),
                   selectInput(ns("teacher_select_inspector"), label = NULL, choices = c("Select Faculty" = ""), width = "180px")
@@ -895,7 +895,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
           div(style = "display:grid; grid-template-columns: 1.4fr 1fr; gap:20px;",
             plotlyOutput(ns("chart_subject_trends"), height = "340px"),
             div(
-              p(style = "font-weight:700; font-size:0.85rem; color:#1e3314; margin-bottom:8px;", "📊 Aspect Improvement Delta Summary"),
+              p(style = "font-weight:700; font-size:0.85rem; color:#333333; margin-bottom:8px;", "📊 Aspect Improvement Delta Summary"),
               uiOutput(ns("subject_delta_summary_ui"))
             )
           )
@@ -960,7 +960,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         ),
         div(class = "gw-settings-group",
           actionButton(ns("btn_save_settings"), "Save Settings", class = "btn-success",
-            style = "background:#3d5a2b; color:#fff; font-weight:700; border:none; padding:10px 24px; border-radius:8px; cursor:pointer;"),
+            style = "background:#4272d7; color:#fff; font-weight:700; border:none; padding:10px 24px; border-radius:8px; cursor:pointer;"),
           uiOutput(ns("settings_saved_msg"))
         )
       )
@@ -968,7 +968,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
     observeEvent(input$btn_save_settings, {
       output$settings_saved_msg <- renderUI({
-        div(style = "margin-top:10px; color:#3d5a2b; font-weight:700; font-size:0.88rem;",
+        div(style = "margin-top:10px; color:#4272d7; font-weight:700; font-size:0.88rem;",
           "✓ Settings saved successfully!")
       })
     })
@@ -988,7 +988,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
           span(style = "font-size:0.75rem; font-weight:700; color:#059669; text-transform:uppercase;", "🏆 Top Performing Department"),
           span(style = "background:#d1fae5; color:#065f46; font-size:0.72rem; font-weight:700; padding:2px 8px; border-radius:9999px;", "Leading")
         ),
-        h3(style = "margin:6px 0 4px; color:#1e3314; font-weight:800;", td$department),
+        h3(style = "margin:6px 0 4px; color:#333333; font-weight:800;", td$department),
         div(style = "margin-bottom:8px;", format_teacher_badge(teacher_name_val)),
         p(style = "font-size:0.85rem; color:#64748b; margin:0 0 10px;", sprintf("%d%% positive sentiment across %d responses", td$pos_pct, td$total)),
         div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; border-top:1px dashed #a7f3d0; padding-top:8px; font-size:0.8rem;",
@@ -1023,7 +1023,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
           span(style = "font-size:0.75rem; font-weight:700; color:#ef4444; text-transform:uppercase;", "⚠️ Needs Attention"),
           span(style = "background:#fee2e2; color:#991b1b; font-size:0.72rem; font-weight:700; padding:2px 8px; border-radius:9999px;", "Lowest")
         ),
-        h3(style = "margin:6px 0 4px; color:#1e3314; font-weight:800;", bd$department),
+        h3(style = "margin:6px 0 4px; color:#333333; font-weight:800;", bd$department),
         div(style = "margin-bottom:8px;", format_teacher_badge(teacher_name_val)),
         p(style = "font-size:0.85rem; color:#64748b; margin:0 0 10px;", sprintf("%d%% negative sentiment across %d responses", bd$neg_pct, bd$total)),
         div(style = "background:rgba(239,68,68,0.06); border:1px solid rgba(239,68,68,0.15); border-radius:6px; padding:6px 10px; font-size:0.78rem; color:#991b1b;",
@@ -1160,7 +1160,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         teacher <- if (is.na(r$teacher_name)) NULL else r$teacher_name
 
         div(style="border:1px solid #e2ebd8;border-radius:8px;padding:12px;margin-bottom:8px;background:#fff;",
-          p(style="margin:0 0 8px;color:#1a2e23;font-size:0.84rem;line-height:1.45;", r$text),
+          p(style="margin:0 0 8px;color:#333333;font-size:0.84rem;line-height:1.45;", r$text),
           div(style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;",
             span(class="gw-tag good", dept),
             span(class="gw-tag good", course),
@@ -1421,7 +1421,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
         div(style = "padding:10px 12px; border:1px solid #e2ebd8; border-radius:8px; margin-bottom:8px; background:#fff; display:flex; justify-content:space-between; align-items:center;",
           div(
-            div(style = "font-weight:700; font-size:0.86rem; color:#1e3314;", sprintf("👨‍🏫 %s", r$teacher_name)),
+            div(style = "font-weight:700; font-size:0.86rem; color:#333333;", sprintf("🧑‍🏫 %s", r$teacher_name)),
             div(style = "font-size:0.75rem; color:#64748b;", sprintf("%s · %d sems", r$teacher_dept, r$sems_covered))
           ),
           div(style = "text-align:right;",
@@ -1455,10 +1455,10 @@ adminPortalServer <- function(id, user, logout_trigger) {
                     else if (delta >= 0) "Steady / Consistent Performance ⭐"
                     else "Needs Targeted Support ⚠️"
 
-      div(style = "background:#f4f8f2; border:1px solid #d4e3ca; border-radius:8px; padding:10px 14px; margin-bottom:12px; font-size:0.8rem;",
+      div(style = "background:#ffffff; border:1px solid #d4e3ca; border-radius:8px; padding:10px 14px; margin-bottom:12px; font-size:0.8rem;",
         div(style = "display:flex; justify-content:space-between; align-items:center;",
-          span(style = "font-weight:800; color:#1e3314; font-size:0.9rem;", sel_t),
-          span(style = "font-weight:700; color:#3d5a2b;", status_msg)
+          span(style = "font-weight:800; color:#333333; font-size:0.9rem;", sel_t),
+          span(style = "font-weight:700; color:#4272d7;", status_msg)
         ),
         div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px; color:#475569;",
           div(span("Sem 1 Positivity: "), tags$b(sprintf("%.1f%%", first_pos))),
@@ -1556,7 +1556,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
         div(style = "padding:8px 12px; border:1px solid #e2ebd8; border-radius:8px; margin-bottom:6px; background:#fff; display:flex; justify-content:space-between; align-items:center;",
           div(
-            span(style = "font-weight:700; font-size:0.83rem; color:#1e3314;", sprintf("%s %s", ico, lbl)),
+            span(style = "font-weight:700; font-size:0.83rem; color:#333333;", sprintf("%s %s", ico, lbl)),
             div(style = "font-size:0.72rem; color:#64748b;", sprintf("Latest Rating: %.2f/5", a_sub$avg_rating[n]))
           ),
           span(class = badge_cls, status_txt)
@@ -1618,14 +1618,14 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
       items <- lapply(seq_len(nrow(top50)), function(i) {
         r <- top50[i, ]
-        bg <- if (!is.null(sel) && sel == r$id) "#f4f8f2" else "#fff"
+        bg <- if (!is.null(sel) && sel == r$id) "#ffffff" else "#fff"
         badge_cls <- if (r$rating == 1) "gw-tag good" else if (r$rating == -1) "gw-tag critical" else "gw-tag"
         badge_lbl <- if (r$rating == 1) "positive" else if (r$rating == -1) "negative" else "neutral"
 
         div(style = sprintf("padding:12px 14px; border-bottom:1px solid #f1f5f9; cursor:pointer; background:%s;", bg),
           onclick = sprintf("Shiny.setInputValue('%s',%d,{priority:'event'})", session$ns("exp_item_click"), r$id),
           div(style = "display:flex; justify-content:space-between; align-items:center;",
-            span(style = "font-weight:700; font-size:0.84rem; color:#1e3314;", get_course_name(r$teacher_dept, r$aspect)),
+            span(style = "font-weight:700; font-size:0.84rem; color:#333333;", get_course_name(r$teacher_dept, r$aspect)),
             span(class = badge_cls, badge_lbl)
           ),
           p(style = "margin:4px 0; font-size:0.78rem; color:#64748b; line-height:1.4;", substr(r$text, 1, 85)),
@@ -1654,7 +1654,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         div(style = "display:flex; justify-content:space-between; align-items:flex-start;",
           div(
             span(style = "font-size:0.7rem; color:#94a3b8; font-family:monospace;", sprintf("FB-%04d", item$id)),
-            h4(style = "margin:2px 0; color:#1e3314; font-weight:800; font-size:1.1rem;", course),
+            h4(style = "margin:2px 0; color:#333333; font-weight:800; font-size:1.1rem;", course),
             div(style = "margin-top:4px; display:flex; align-items:center; gap:8px;",
               span(style = "font-size:0.82rem; color:#64748b;", dept),
               format_teacher_badge(item$teacher_name)
@@ -1663,16 +1663,16 @@ adminPortalServer <- function(id, user, logout_trigger) {
           span(class = if (item$rating == 1) "gw-tag good" else if (item$rating == -1) "gw-tag critical" else "gw-tag",
             if (item$rating == 1) "positive" else if (item$rating == -1) "negative" else "neutral")
         ),
-        div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:10px 0; border-top:1px dashed #e0ebd5; border-bottom:1px dashed #e0ebd5;",
-          div(span(style="font-size:0.67rem;color:#94a3b8;display:block;","Sentiment Score"), span(style="font-weight:700;font-family:monospace;color:#1e3314;", sent_score)),
-          div(span(style="font-size:0.67rem;color:#94a3b8;display:block;","Semester"), span(style="font-weight:700;color:#1e3314;", item$semester %||% "N/A")),
+        div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:10px 0; border-top:1px dashed #e5e5e5; border-bottom:1px dashed #e5e5e5;",
+          div(span(style="font-size:0.67rem;color:#94a3b8;display:block;","Sentiment Score"), span(style="font-weight:700;font-family:monospace;color:#333333;", sent_score)),
+          div(span(style="font-size:0.67rem;color:#94a3b8;display:block;","Semester"), span(style="font-weight:700;color:#333333;", item$semester %||% "N/A")),
           div(span(style="font-size:0.67rem;color:#94a3b8;display:block;","Received"), span(style="font-weight:600;color:#64748b;", format(as.POSIXct(item$created_at), "%b %d, %Y")))
         ),
         div(
           span(style="font-size:0.7rem;color:#94a3b8;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px;","Student Feedback"),
-          tags$blockquote(style="margin:0; padding:10px 14px; border-left:3px solid #3d5a2b; font-size:0.88rem; color:#1a2e23; line-height:1.5; font-style:italic; background:#fff; border-radius:0 8px 8px 0;", item$text)
+          tags$blockquote(style="margin:0; padding:10px 14px; border-left:3px solid #4272d7; font-size:0.88rem; color:#333333; line-height:1.5; font-style:italic; background:#fff; border-radius:0 8px 8px 0;", item$text)
         ),
-        div(style="background:#ffffff; border:1px solid #e0ebd5; border-radius:8px; padding:12px 14px;",
+        div(style="background:#ffffff; border:1px solid #e5e5e5; border-radius:8px; padding:12px 14px;",
           span(style="font-size:0.7rem; color:#94a3b8; text-transform:uppercase; font-weight:700; display:block; margin-bottom:4px;","Action Situation"),
           p(style="margin:0; font-size:0.83rem; color:#334155; line-height:1.45;",
             switch(as.character(item$rating),

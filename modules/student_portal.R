@@ -12,7 +12,7 @@ studentPortalUI <- function(id) {
             tags$p(class = "student-main-sub", "Share your academic experience — teaching, curriculum, exams & campus life.")
           ),
           actionButton(ns("btn_logout"), "Logout",
-            style = "border-radius:8px; color:#0d2b1f; border:1px solid #cdc9c0; background:#f0ece4; font-weight:600; padding:6px 18px; font-size:0.87rem;")
+            style = "border-radius:8px; color:#4272d7; border:1px solid #e5e5e5; background:#ffffff; font-weight:600; padding:6px 18px; font-size:0.87rem;")
         )
       ),
 
@@ -22,9 +22,9 @@ studentPortalUI <- function(id) {
           br(),
 
           # Anonymity Toggle Card
-          div(class = "glass-card", style = "margin-bottom:18px; display:flex; align-items:center; gap:18px; padding:16px 22px; background:#d8e6de !important; border-color:#b8c9b0 !important;",
+          div(class = "glass-card", style = "margin-bottom:18px; display:flex; align-items:center; gap:18px; padding:16px 22px; background:#f3f5f9 !important; border-color:#e5e5e5 !important;",
             div(style = "flex:1;",
-              strong(style = "color:#0d2b1f; font-size:0.97rem; display:flex; align-items:center; gap:8px;", "🔒 Anonymous Submission"),
+              strong(style = "color:#4272d7; font-size:0.97rem; display:flex; align-items:center; gap:8px;", "🔒 Anonymous Submission"),
               p(style = "color:#7c7973; font-size:0.84rem; margin:3px 0 0;",
                 "When enabled, your identity is not stored. Encourages honest, unfiltered responses.")
             ),
@@ -151,17 +151,17 @@ studentPortalServer <- function(id, user, logout_trigger) {
       div(class = "student-sticky-header",
         div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px;",
           div(
-            span(style = "font-size:0.72rem; font-weight:800; color:#5f8a74; text-transform:uppercase; letter-spacing:0.1em;",
+            span(style = "font-size:0.72rem; font-weight:800; color:#4272d7; text-transform:uppercase; letter-spacing:0.1em;",
                  sprintf("SECTION %d OF 5", step_num)),
-            tags$h3(style = "margin:3px 0 0; font-family:'Playfair Display',Georgia,serif; font-weight:700; font-size:1.35rem; color:#0d2b1f;",
+            tags$h3(style = "margin:3px 0 0; font-family:'Poppins', sans-serif; font-weight:700; font-size:1.35rem; color:#4272d7;",
                     sprintf("%s %s", step_data$icon, step_data$title))
           ),
-          span(style = "font-weight:700; color:#2d4d3e; font-size:0.87rem; background:#d8e6de; padding:5px 14px; border-radius:9999px; border:1px solid #b8c9b0;",
+          span(style = "font-weight:700; color:#4272d7; font-size:0.87rem; background:#f3f5f9; padding:5px 14px; border-radius:9999px; border:1px solid #e5e5e5;",
                sprintf("%d of 5 Completed (%d%%)", step_num, pct))
         ),
         # Progress track
         div(style = "width:100%; height:6px; background:#e0dbd1; border-radius:9999px; overflow:hidden; margin:0 0 12px 0;",
-          div(style = sprintf("width:%d%%; height:100%%; background:#0d2b1f; transition:width 0.4s ease; border-radius:9999px;", pct))
+          div(style = sprintf("width:%d%%; height:100%%; background:#4272d7; transition:width 0.4s ease; border-radius:9999px;", pct))
         ),
         div(style = "display:flex; gap:7px; flex-wrap:wrap;", pills)
       )
@@ -201,7 +201,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
       step_num <- current_step()
       if (step_num > 1) {
         actionButton(ns("btn_prev"), "← Previous",
-          style = "border-radius:8px; font-weight:600; color:#0d2b1f; border:1px solid #cdc9c0; background:#f0ece4; padding:9px 22px;")
+          style = "border-radius:8px; font-weight:600; color:#4272d7; border:1px solid #e5e5e5; background:#ffffff; padding:9px 22px;")
       } else {
         tags$span(style = "color:#7c7973; font-size:0.85rem;", "Step 1 of 5 — Begin your feedback")
       }
@@ -211,10 +211,10 @@ studentPortalServer <- function(id, user, logout_trigger) {
       step_num <- current_step()
       if (step_num < 5) {
         actionButton(ns("btn_next"), "Next Step →",
-          style = "border-radius:8px; font-weight:700; background:#0d2b1f; color:#ffffff; border:none; padding:10px 28px; box-shadow:0 3px 10px rgba(13,43,31,0.2);")
+          style = "border-radius:8px; font-weight:700; background:#4272d7; color:#ffffff; border:none; padding:10px 28px; box-shadow:0 3px 10px rgba(13,43,31,0.2);")
       } else {
         actionButton(ns("btn_submit"), "🚀 Submit All Feedback",
-          style = "border-radius:8px; font-weight:800; background:#0d2b1f; color:#f0ece4; border:none; padding:11px 34px; box-shadow:0 4px 14px rgba(13,43,31,0.25); font-size:1rem;")
+          style = "border-radius:8px; font-weight:800; background:#4272d7; color:#ffffff; border:none; padding:11px 34px; box-shadow:0 4px 14px rgba(13,43,31,0.25); font-size:1rem;")
       }
     })
 
@@ -253,9 +253,9 @@ studentPortalServer <- function(id, user, logout_trigger) {
         }
 
         output$submit_result <- renderUI({
-          div(style = "margin-top:18px; padding:18px 22px; background:#d8e6de; border:1px solid #b8c9b0; border-left:4px solid #0d2b1f; border-radius:12px; color:#0d2b1f; text-align:left;",
-            tags$h4(style = "margin:0 0 5px; font-family:'Playfair Display',serif; font-weight:700; color:#0d2b1f;", "✅ Feedback Submitted Successfully!"),
-            p(style = "margin:0; color:#2d4d3e; font-size:0.89rem;",
+          div(style = "margin-top:18px; padding:18px 22px; background:#f3f5f9; border:1px solid #e5e5e5; border-left:4px solid #4272d7; border-radius:12px; color:#4272d7; text-align:left;",
+            tags$h4(style = "margin:0 0 5px; font-family:'Poppins', sans-serif; font-weight:700; color:#4272d7;", "✅ Feedback Submitted Successfully!"),
+            p(style = "margin:0; color:#4272d7; font-size:0.89rem;",
               sprintf("Recorded for %s under %s. Thank you, %s!", semester, user$name %||% "Student", user$name %||% ""))
           )
         })

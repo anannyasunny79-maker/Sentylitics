@@ -61,6 +61,15 @@ get_faculty_feedback <- function(faculty_id, aspects = c("teaching", "coursecont
   ))
 }
 
+# Fetch ALL 6 feedback aspects for a faculty member (for the faculty portal)
+get_faculty_feedback_all <- function(faculty_id) {
+  con <- get_db_con(); on.exit(dbDisconnect(con))
+  dbGetQuery(con, sprintf(
+    "SELECT aspect, rating, text, semester, created_at FROM feedback_entries WHERE faculty_id = %d ORDER BY created_at ASC",
+    as.integer(faculty_id)
+  ))
+}
+
 # --- ADMIN QUERIES ---
 get_all_feedback <- function() {
   con <- get_db_con(); on.exit(dbDisconnect(con))

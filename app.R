@@ -38,11 +38,11 @@ SHARED_CSS <- "
   *, *::before, *::after { box-sizing: border-box; }
   body {
     margin: 0; padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.95rem !important;
     line-height: 1.5;
-    background-color: #f4f7f5;
-    color: #1c2a23;
+    background-color: #e5e5e5;
+    color: #333333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -70,12 +70,12 @@ SHARED_CSS <- "
   }
 
   /* ================================================================
-     LEFT PANEL — deep forest green  #0d2b1f
+     LEFT PANEL — deep forest green  #4272d7
   ================================================================ */
   .login-left {
     width: 40%;
     min-width: 340px;
-    background-color: #0d2b1f;
+    background-color: #4272d7;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -162,11 +162,11 @@ SHARED_CSS <- "
   }
 
   /* ================================================================
-     RIGHT PANEL — warm ivory  #f0ece4
+     RIGHT PANEL — warm ivory  #ffffff
   ================================================================ */
   .login-right {
     flex: 1;
-    background-color: #f0ece4;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -179,8 +179,8 @@ SHARED_CSS <- "
      LOGIN CARD — floats on ivory, left-aligned, barely visible border
   ================================================================ */
   .login-card {
-    background: #ede9e1;
-    border: 1px solid #ddd9d0;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
     border-radius: 18px;
     padding: 44px 40px;
     width: 100%;
@@ -192,7 +192,7 @@ SHARED_CSS <- "
   /* Overline */
   .login-card-overline {
     display: block;
-    color: #5f8a74;
+    color: #4272d7;
     font-size: 10px;
     font-weight: 700;
     letter-spacing: 0.14em;
@@ -202,10 +202,10 @@ SHARED_CSS <- "
 
   /* Title */
   .login-card-title {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 2.3rem;
     font-weight: 700;
-    color: #0d2b1f;
+    color: #4272d7;
     margin: 0 0 8px 0;
     line-height: 1.1;
     letter-spacing: -0.01em;
@@ -224,7 +224,7 @@ SHARED_CSS <- "
   .login-card label,
   .login-card .control-label {
     display: block;
-    color: #2a2926;
+    color: #333333;
     font-size: 13.5px;
     font-weight: 600;
     margin-bottom: 7px;
@@ -237,12 +237,12 @@ SHARED_CSS <- "
   .login-card input[type=text],
   .login-card input[type=email],
   .login-card input[type=password] {
-    background: #f5f2ec !important;
-    border: 1px solid #cdc9c0 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 8px !important;
-    color: #1a1917 !important;
+    color: #333333 !important;
     font-size: 14px !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     padding: 13px 14px !important;
     width: 100% !important;
     box-shadow: none !important;
@@ -260,9 +260,9 @@ SHARED_CSS <- "
   }
   .login-card .form-control:focus,
   .login-card input:focus {
-    border-color: #0d2b1f !important;
+    border-color: #4272d7 !important;
     box-shadow: none !important;
-    background: #f5f2ec !important;
+    background: #ffffff !important;
     outline: none !important;
   }
   .login-card .form-group { margin-bottom: 16px; }
@@ -270,14 +270,14 @@ SHARED_CSS <- "
   /* Sign in button — dark green, no shadow, subtle hover */
   .btn-login {
     width: 100% !important;
-    background: #0d2b1f !important;
+    background: #4272d7 !important;
     color: #fff !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 14px 20px !important;
     font-size: 14px !important;
     font-weight: 600 !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Poppins', sans-serif !important;
     letter-spacing: 0.005em !important;
     cursor: pointer !important;
     display: flex !important;
@@ -290,7 +290,7 @@ SHARED_CSS <- "
     line-height: 1 !important;
   }
   .btn-login:hover {
-    background: #163d2c !important;
+    background: #3868cd !important;
     box-shadow: none !important;
     transform: none !important;
   }
@@ -315,8 +315,8 @@ SHARED_CSS <- "
   /* Privacy banner — soft green tint */
   .login-privacy {
     margin-top: 20px;
-    background: #d8e6de;
-    color: #2d4d3e;
+    background: #f3f5f9;
+    color: #4272d7;
     font-size: 12px;
     font-weight: 500;
     padding: 11px 15px;
@@ -368,26 +368,26 @@ SHARED_CSS <- "
      PORTAL BODY — warm ivory light theme (matches login)
   ================================================================ */
   .portal-body {
-    background-color: #f0ece4;
+    background-color: #ffffff;
     background-image: none;
     min-height: 100vh;
-    font-family: 'Inter', sans-serif;
-    color: #1a1917;
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
   }
 
   /* Top nav bar */
   .portal-body .portal-topbar {
-    background: #ede9e1 !important;
-    border: 1px solid #ddd9d0 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 12px !important;
   }
-  .portal-body .portal-topbar-brand { color: #0d2b1f !important; }
+  .portal-body .portal-topbar-brand { color: #4272d7 !important; }
   .portal-body .portal-topbar-user  { color: #000000 !important; font-weight: 700 !important; }
 
   /* Glass cards → light cards */
   .portal-body .glass-card {
-    background: #ede9e1 !important;
-    border: 1px solid #ddd9d0 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 14px !important;
     backdrop-filter: none !important;
     box-shadow: 0 2px 16px -4px rgba(13,43,31,0.07), 0 1px 3px rgba(13,43,31,0.04) !important;
@@ -400,7 +400,7 @@ SHARED_CSS <- "
 
   /* Headings inside portal */
   .portal-body h2, .portal-body h3, .portal-body h4, .portal-body h5, .portal-body h6 {
-    color: #0d2b1f !important;
+    color: #4272d7 !important;
     background: none !important;
     -webkit-text-fill-color: unset !important;
   }
@@ -419,16 +419,16 @@ SHARED_CSS <- "
   .portal-body [style*='color: #f8fafc'],
   .portal-body [style*='color:#cbd5e1'],
   .portal-body [style*='color: #cbd5e1'] {
-    color: #0d2b1f !important;
+    color: #4272d7 !important;
   }
 
   /* Role badges */
   .portal-body .badge-student { background:rgba(59,130,246,0.1); color:#2563eb; border:1px solid rgba(59,130,246,0.25); }
-  .portal-body .badge-faculty { background:rgba(16,185,129,0.1); color:#047857; border:1px solid rgba(16,185,129,0.25); }
+  .portal-body .badge-faculty { background:rgba(16,185,129,0.1); color:#047857; border:1px solid rgba(66,114,215,0.25); }
   .portal-body .badge-admin   { background:rgba(180,130,0,0.1);  color:#92400e; border:1px solid rgba(180,130,0,0.25); }
 
   /* Tab panels */
-  .portal-body .nav-tabs { border-bottom: 2px solid #ddd9d0 !important; }
+  .portal-body .nav-tabs { border-bottom: 2px solid #e5e5e5 !important; }
   .portal-body .nav-tabs .nav-link {
     color: #7c7973 !important;
     background: transparent !important;
@@ -440,10 +440,10 @@ SHARED_CSS <- "
     margin-bottom: -2px !important;
     transition: color 0.15s, border-color 0.15s !important;
   }
-  .portal-body .nav-tabs .nav-link:hover { color: #0d2b1f !important; }
+  .portal-body .nav-tabs .nav-link:hover { color: #4272d7 !important; }
   .portal-body .nav-tabs .nav-link.active {
-    color: #0d2b1f !important;
-    border-bottom-color: #0d2b1f !important;
+    color: #4272d7 !important;
+    border-bottom-color: #4272d7 !important;
     font-weight: 700 !important;
     background: transparent !important;
   }
@@ -455,61 +455,61 @@ SHARED_CSS <- "
   .portal-body input[type=number],
   .portal-body textarea,
   .portal-body select {
-    background: #f5f2ec !important;
-    border: 1px solid #cdc9c0 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 8px !important;
-    color: #1a1917 !important;
+    color: #333333 !important;
     box-shadow: none !important;
   }
   .portal-body .form-control:focus,
   .portal-body input:focus,
   .portal-body textarea:focus,
   .portal-body select:focus {
-    border-color: #0d2b1f !important;
+    border-color: #4272d7 !important;
     box-shadow: none !important;
-    background: #f5f2ec !important;
+    background: #ffffff !important;
     outline: none !important;
   }
 
   /* Selectize (custom dropdowns) */
   .portal-body .selectize-input {
-    background: #f5f2ec !important;
-    border: 1px solid #cdc9c0 !important;
-    color: #1a1917 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    color: #333333 !important;
     border-radius: 8px !important;
     box-shadow: none !important;
   }
   .portal-body .selectize-dropdown {
-    background: #f5f2ec !important;
-    border: 1px solid #cdc9c0 !important;
-    color: #1a1917 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    color: #333333 !important;
     box-shadow: 0 4px 20px rgba(13,43,31,0.1) !important;
   }
   .portal-body .selectize-dropdown .option:hover,
   .portal-body .selectize-dropdown .option.active {
-    background: #d8e6de !important;
-    color: #0d2b1f !important;
+    background: #f3f5f9 !important;
+    color: #4272d7 !important;
   }
 
   /* Sliders */
-  .portal-body .irs--shiny .irs-bar { background: #0d2b1f !important; border-color: #0d2b1f !important; }
-  .portal-body .irs--shiny .irs-handle { border-color: #0d2b1f !important; }
+  .portal-body .irs--shiny .irs-bar { background: #4272d7 !important; border-color: #4272d7 !important; }
+  .portal-body .irs--shiny .irs-handle { border-color: #4272d7 !important; }
   .portal-body .irs--shiny .irs-from,
   .portal-body .irs--shiny .irs-to,
-  .portal-body .irs--shiny .irs-single { background: #0d2b1f !important; }
+  .portal-body .irs--shiny .irs-single { background: #4272d7 !important; }
   .portal-body .irs--shiny .irs-line { background: #e0dbd1 !important; }
   .portal-body .irs-min, .portal-body .irs-max { color: #7c7973 !important; }
   .portal-body .irs-grid-text { color: #7c7973 !important; }
 
   /* Buttons */
   .portal-body .btn-primary {
-    background: #0d2b1f !important;
-    border-color: #0d2b1f !important;
+    background: #4272d7 !important;
+    border-color: #4272d7 !important;
     color: #fff !important;
     border-radius: 8px !important;
     box-shadow: none !important;
   }
-  .portal-body .btn-primary:hover { background: #163d2c !important; border-color: #163d2c !important; }
+  .portal-body .btn-primary:hover { background: #3868cd !important; border-color: #3868cd !important; }
 
   .portal-body .btn-warning {
     background: #92400e !important;
@@ -521,13 +521,13 @@ SHARED_CSS <- "
 
   .portal-body .btn-outline-secondary {
     background: transparent !important;
-    border-color: #cdc9c0 !important;
+    border-color: #e5e5e5 !important;
     color: #4a4845 !important;
     border-radius: 8px !important;
   }
   .portal-body .btn-outline-secondary:hover {
     background: #e0dbd1 !important;
-    color: #0d2b1f !important;
+    color: #4272d7 !important;
   }
 
   /* Download buttons */
@@ -549,44 +549,44 @@ SHARED_CSS <- "
   .portal-body .dataTable th,
   .portal-body .dataTable td {
     background: transparent !important;
-    color: #1a1917 !important;
+    color: #333333 !important;
     border-color: #e0dbd1 !important;
   }
   .portal-body .dataTable th {
-    background: #e8e4dc !important;
-    color: #0d2b1f !important;
+    background: #f5f5f5 !important;
+    color: #4272d7 !important;
     font-weight: 600 !important;
   }
-  .portal-body .dataTable tbody tr:hover td { background: #d8e6de !important; }
+  .portal-body .dataTable tbody tr:hover td { background: #f3f5f9 !important; }
   .portal-body .dataTables_wrapper .dataTables_filter input,
   .portal-body .dataTables_wrapper select {
-    background: #f5f2ec !important;
-    border: 1px solid #cdc9c0 !important;
-    color: #1a1917 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
+    color: #333333 !important;
     border-radius: 8px !important;
   }
   .portal-body .dataTables_info,
   .portal-body .dataTables_length label,
   .portal-body .dataTables_filter label { color: #7c7973 !important; }
-  .portal-body .paginate_button { color: #0d2b1f !important; }
-  .portal-body .paginate_button.current { background: #0d2b1f !important; color: #fff !important; border-radius: 6px !important; }
+  .portal-body .paginate_button { color: #4272d7 !important; }
+  .portal-body .paginate_button.current { background: #4272d7 !important; color: #fff !important; border-radius: 6px !important; }
 
   /* Alert / success / error banners */
   .portal-body [style*='background:rgba(16,185,129'] { background: rgba(5,150,105,0.08) !important; }
   .portal-body [style*='background:rgba(239,68,68']  { background: rgba(220,38,38,0.08) !important; }
-  .portal-body [style*='color:#10b981'] { color: #047857 !important; }
+  .portal-body [style*='color:#4272d7'] { color: #047857 !important; }
   .portal-body [style*='color:#ef4444'] { color: #b91c1c !important; }
   .portal-body [style*='color:#f59e0b'] { color: #b45309 !important; }
 
   /* NLP highlight cards */
   .portal-body [style*='background:rgba(59,130,246,0.07)'] {
     background: rgba(13,43,31,0.05) !important;
-    border-left-color: #0d2b1f !important;
+    border-left-color: #4272d7 !important;
   }
-  .portal-body [style*='color:#cbd5e1'] { color: #2a2926 !important; }
+  .portal-body [style*='color:#cbd5e1'] { color: #333333 !important; }
 
   /* Checkbox */
-  .portal-body input[type=checkbox]:checked { accent-color: #0d2b1f; }
+  .portal-body input[type=checkbox]:checked { accent-color: #4272d7; }
 
   /* Plotly charts — override transparent bg for light mode */
   .portal-body .js-plotly-plot .plotly { background: transparent !important; }
@@ -605,30 +605,30 @@ SHARED_CSS <- "
 
   /* Cards — exact match to admin portal .glass-card */
   .student-portal-wrapper .glass-card {
-    background: #ede9e1 !important;
-    border: 1px solid #ddd9d0 !important;
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 16px !important;
-    box-shadow: 0 2px 18px -4px rgba(13,43,31,0.08), 0 1px 3px rgba(13,43,31,0.04) !important;
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(13,43,31,0.04) !important;
     padding: 24px 28px !important;
     transition: border-color 0.18s ease, box-shadow 0.18s ease !important;
   }
   .student-portal-wrapper .glass-card:hover {
     border-color: #c8c3b8 !important;
-    box-shadow: 0 6px 28px -6px rgba(13,43,31,0.12), 0 1px 4px rgba(13,43,31,0.05) !important;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15), 0 1px 4px rgba(13,43,31,0.05) !important;
   }
 
   /* ── MAIN PORTAL TITLE — decorative with left accent bar */
   .student-portal-wrapper .student-main-title {
-    font-family: 'Playfair Display', Georgia, serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 2.2rem !important;
     font-weight: 700 !important;
     font-style: italic !important;
-    color: #0d2b1f !important;
+    color: #4272d7 !important;
     margin: 0 0 6px 0 !important;
     letter-spacing: -0.02em !important;
     line-height: 1.1 !important;
     padding-left: 16px !important;
-    border-left: 4px solid #5f8a74 !important;
+    border-left: 4px solid #4272d7 !important;
   }
   .student-portal-wrapper .student-main-sub {
     font-size: 0.88rem !important;
@@ -639,10 +639,10 @@ SHARED_CSS <- "
 
   /* ── SECTION TITLES — Premium serif with forest-green underline accent */
   .student-portal-wrapper .student-section-title {
-    font-family: 'Playfair Display', Georgia, serif !important;
+    font-family: 'Poppins', sans-serif !important;
     font-size: 1.5rem !important;
     font-weight: 700 !important;
-    color: #0d2b1f !important;
+    color: #4272d7 !important;
     margin-bottom: 20px !important;
     padding-bottom: 12px !important;
     display: flex !important;
@@ -659,21 +659,21 @@ SHARED_CSS <- "
     left: 0 !important;
     width: 100% !important;
     height: 1px !important;
-    background: linear-gradient(90deg, #0d2b1f 0%, #5f8a74 40%, transparent 100%) !important;
+    background: linear-gradient(90deg, #4272d7 0%, #4272d7 40%, transparent 100%) !important;
   }
 
   /* ── SUB-LABELS — olive green uppercase badge style */
   .student-portal-wrapper .student-sub-title {
     font-size: 0.78rem !important;
     font-weight: 800 !important;
-    color: #2d4d3e !important;
+    color: #4272d7 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.1em !important;
     margin-bottom: 12px !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
-    background: #d8e6de !important;
+    background: #f3f5f9 !important;
     border-radius: 6px !important;
     padding: 5px 10px !important;
     width: fit-content !important;
@@ -682,7 +682,7 @@ SHARED_CSS <- "
   /* Input Labels */
   .student-portal-wrapper .control-label,
   .student-portal-wrapper label {
-    color: #2a2926 !important;
+    color: #333333 !important;
     font-weight: 600 !important;
     font-size: 0.93rem !important;
     margin-bottom: 6px !important;
@@ -693,9 +693,9 @@ SHARED_CSS <- "
   .student-portal-wrapper input[type=text],
   .student-portal-wrapper select,
   .student-portal-wrapper .form-control {
-    background: #f5f2ec !important;
-    color: #1a1917 !important;
-    border: 1px solid #cdc9c0 !important;
+    background: #ffffff !important;
+    color: #333333 !important;
+    border: 1px solid #e5e5e5 !important;
     border-radius: 8px !important;
     font-size: 0.93rem !important;
     line-height: 1.5 !important;
@@ -713,8 +713,8 @@ SHARED_CSS <- "
   .student-portal-wrapper input:focus,
   .student-portal-wrapper select:focus,
   .student-portal-wrapper .form-control:focus {
-    background: #f5f2ec !important;
-    border-color: #0d2b1f !important;
+    background: #ffffff !important;
+    border-color: #4272d7 !important;
     box-shadow: 0 0 0 3px rgba(13,43,31,0.12) !important;
     outline: none !important;
   }
@@ -726,14 +726,14 @@ SHARED_CSS <- "
     border-radius: 4px !important;
   }
   .student-portal-wrapper .irs--shiny .irs-bar {
-    background: #0d2b1f !important;
+    background: #4272d7 !important;
     border: none !important;
     height: 7px !important;
     border-radius: 4px !important;
   }
   .student-portal-wrapper .irs--shiny .irs-handle {
-    background: #0d2b1f !important;
-    border: 2.5px solid #f0ece4 !important;
+    background: #4272d7 !important;
+    border: 2.5px solid #ffffff !important;
     width: 20px !important;
     height: 20px !important;
     top: 22px !important;
@@ -741,8 +741,8 @@ SHARED_CSS <- "
     cursor: pointer !important;
   }
   .student-portal-wrapper .irs--shiny .irs-single {
-    background: #0d2b1f !important;
-    color: #f0ece4 !important;
+    background: #4272d7 !important;
+    color: #ffffff !important;
     font-weight: 700 !important;
     font-size: 12px !important;
     border-radius: 6px !important;
@@ -762,20 +762,20 @@ SHARED_CSS <- "
     position: sticky;
     top: 12px;
     z-index: 100;
-    background: #ede9e1;
-    border: 1px solid #ddd9d0;
-    border-left: 4px solid #0d2b1f;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-left: 4px solid #4272d7;
     border-radius: 12px;
     padding: 14px 22px;
-    box-shadow: 0 4px 20px -4px rgba(13,43,31,0.10);
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
     margin-bottom: 22px;
   }
 
   /* Step Indicator Pills — ivory + forest green */
   .student-step-pill {
-    background: #f0ece4;
-    color: #5f8a74;
-    border: 1px solid #cdc9c0;
+    background: #ffffff;
+    color: #4272d7;
+    border: 1px solid #e5e5e5;
     border-radius: 9999px;
     padding: 6px 14px;
     font-size: 0.8rem;
@@ -787,21 +787,21 @@ SHARED_CSS <- "
     gap: 5px;
   }
   .student-step-pill:hover {
-    background: #d8e6de;
-    color: #0d2b1f;
-    border-color: #b8c9b0;
+    background: #f3f5f9;
+    color: #4272d7;
+    border-color: #e5e5e5;
   }
   .student-step-pill.active {
-    background: #0d2b1f !important;
-    color: #f0ece4 !important;
+    background: #4272d7 !important;
+    color: #ffffff !important;
     font-weight: 800 !important;
-    border-color: #0d2b1f !important;
+    border-color: #4272d7 !important;
     box-shadow: 0 3px 12px rgba(13,43,31,0.22) !important;
   }
   .student-step-pill.completed {
-    background: #d8e6de;
-    color: #2d4d3e;
-    border-color: #b8c9b0;
+    background: #f3f5f9;
+    color: #4272d7;
+    border-color: #e5e5e5;
     font-weight: 700;
   }
 
@@ -823,7 +823,7 @@ ui <- fluidPage(
     tags$link(rel = "preconnect", href = "https://fonts.googleapis.com"),
     tags$link(rel = "preconnect", href = "https://fonts.gstatic.com", crossorigin = NA),
     tags$link(
-      href = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap",
+      href = "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap",
       rel = "stylesheet"
     ),
     tags$style(HTML(SHARED_CSS)),
@@ -921,12 +921,27 @@ server <- function(input, output, session) {
             )
           ),
 
-          # Demo credentials — below card
+          # Demo credentials — one-click fill buttons
           div(class = "demo-creds",
-            p(HTML("<strong>Demo Credentials:</strong><br>
-              \U0001F393 Student: alex@college.edu / student123<br>
-              \U0001F9D1&#x200D;\U0001F3EB Faculty: sunita@college.edu / faculty123<br>
-              \U0001F3DB&#xFE0F; Admin: admin@college.edu / admin123"))
+            p(style = "font-size:0.78rem; font-weight:700; color:#7c7973; text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px;",
+              "Quick Login — Click to fill"),
+            div(style = "display:flex; gap:8px; flex-wrap:wrap;",
+              tags$button(
+                onclick = "Shiny.setInputValue('fill_demo', 'student', {priority:'event'})",
+                style = "flex:1; padding:8px 12px; border-radius:8px; border:1px solid #e5e5e5; background:#ffffff; color:#4272d7; font-size:0.82rem; font-weight:700; cursor:pointer;",
+                "🎓 Student"
+              ),
+              tags$button(
+                onclick = "Shiny.setInputValue('fill_demo', 'faculty', {priority:'event'})",
+                style = "flex:1; padding:8px 12px; border-radius:8px; border:1px solid #e5e5e5; background:#ffffff; color:#4272d7; font-size:0.82rem; font-weight:700; cursor:pointer;",
+                "🧑‍🏫 Faculty"
+              ),
+              tags$button(
+                onclick = "Shiny.setInputValue('fill_demo', 'admin', {priority:'event'})",
+                style = "flex:1; padding:8px 12px; border-radius:8px; border:1px solid #e5e5e5; background:#ffffff; color:#4272d7; font-size:0.82rem; font-weight:700; cursor:pointer;",
+                "🏛 Admin"
+              )
+            )
           ),
 
           # Secure footer
@@ -960,13 +975,13 @@ server <- function(input, output, session) {
             div(class = "portal-topbar-brand",
               style = "font-weight:800; font-size:1.05rem; display:flex; align-items:center; gap:8px;",
               tags$svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24",
-                style="width:18px;height:18px;fill:none;stroke:#0d2b1f;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;",
+                style="width:18px;height:18px;fill:none;stroke:#4272d7;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;",
                 tags$path(d="M22 10v6M2 10l10-5 10 5-10 5z"),
                 tags$path(d="M6 12v5c3 3 9 3 12 0v-5")
               ),
               "Campus Listen"
             ),
-            div(style = "width:1px; height:18px; background:#ddd9d0;"),
+            div(style = "width:1px; height:18px; background:#e5e5e5;"),
             role_badge,
             div(style = "flex:1;"),
             div(class = "portal-topbar-user",
@@ -982,17 +997,31 @@ server <- function(input, output, session) {
     }
   })
 
+  # ── DEMO QUICK-FILL HANDLER ──────────────────────────────────────────────
+  observeEvent(input$fill_demo, {
+    creds <- switch(input$fill_demo,
+      student = list(email = "alex@college.edu",    password = "student123"),
+      faculty = list(email = "sunita@college.edu",  password = "faculty123"),
+      admin   = list(email = "admin@college.edu",   password = "admin123"),
+      NULL
+    )
+    if (!is.null(creds)) {
+      updateTextInput(session,     "login_email",    value = creds$email)
+      updateTextInput(session,     "login_password", value = creds$password)
+    }
+  })
+
   # ── LOGIN HANDLER ────────────────────────────────────────────────────────
   observeEvent(input$btn_login, {
     req(input$login_email, input$login_password)
     user <- tryCatch(
-      authenticate_user(trimws(input$login_email), input$login_password),
+      authenticate_user(trimws(input$login_email), trimws(input$login_password)),
       error = function(e) NULL
     )
     if (is.null(user)) {
       output$login_error <- renderUI({
         div(class = "login-error-box",
-          "\u274C Invalid email or password. Please try again.")
+          "❌ Invalid email or password. Please try again.")
       })
     } else {
       output$login_error <- renderUI(NULL)
