@@ -1,0 +1,8 @@
+con <- DBI::dbConnect(RSQLite::SQLite(), "data/sentilytics.db")
+courses <- DBI::dbGetQuery(con, "SELECT department, semester, COUNT(*) as cnt FROM courses GROUP BY department, semester")
+print(head(courses, 16))
+cat("Total courses:", DBI::dbGetQuery(con, "SELECT COUNT(*) as n FROM courses")$n, "\n")
+cat("Total assignments:", DBI::dbGetQuery(con, "SELECT COUNT(*) as n FROM teacher_assignments")$n, "\n")
+fac_courses <- DBI::dbGetQuery(con, "SELECT u.name, COUNT(ta.course_id) as assigned_courses FROM users u LEFT JOIN teacher_assignments ta ON u.id = ta.faculty_id WHERE u.role = 'faculty' GROUP BY u.name")
+print(fac_courses)
+DBI::dbDisconnect(con)
