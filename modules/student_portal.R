@@ -55,7 +55,7 @@ studentPortalUI <- function(id) {
         }
         .st-brand-icon {
           width: 38px; height: 38px;
-          background: #1e40af;
+          background: #4d6b1e;
           border-radius: 8px;
           display: flex; align-items: center; justify-content: center;
           color: #ffffff;
@@ -108,8 +108,8 @@ studentPortalUI <- function(id) {
           color: #0f172a;
         }
         .st-nav-btn.active {
-          background: #eff6ff;
-          color: #1e40af;
+          background: #f0f5e6;
+          color: #4d6b1e;
           font-weight: 600;
         }
         .st-nav-btn.active::before {
@@ -119,7 +119,7 @@ studentPortalUI <- function(id) {
           top: 4px;
           bottom: 4px;
           width: 3px;
-          background: #1e40af;
+          background: #4d6b1e;
           border-radius: 0 2px 2px 0;
         }
         .st-nav-icon {
@@ -137,7 +137,7 @@ studentPortalUI <- function(id) {
         .st-user-avatar {
           width: 32px; height: 32px;
           border-radius: 6px;
-          background: #1e40af;
+          background: #4d6b1e;
           color: #ffffff;
           display: flex; align-items: center; justify-content: center;
           font-weight: 700;
@@ -238,8 +238,8 @@ studentPortalUI <- function(id) {
           border-color: #94a3b8;
         }
         .subj-tab-btn.active {
-          background: #1e40af;
-          border-color: #1e3a8a;
+          background: #4d6b1e;
+          border-color: #3d5516;
           color: #ffffff;
         }
         .subj-tab-btn.done {
@@ -248,8 +248,8 @@ studentPortalUI <- function(id) {
           color: #166534;
         }
         .subj-tab-btn.done.active {
-          background: #1e40af;
-          border-color: #1e3a8a;
+          background: #4d6b1e;
+          border-color: #3d5516;
           color: #ffffff;
         }
       "))
@@ -485,9 +485,9 @@ studentPortalServer <- function(id, user, logout_trigger) {
     output$topbar_deadline_chip <- renderUI({
       win <- feedback_window()
       days_lbl <- if (win$days_left > 0) sprintf("%d Days Left", win$days_left) else "Closing Today"
-      badge_bg <- if (win$days_left <= 3) "#fef2f2" else "#eff6ff"
-      badge_col <- if (win$days_left <= 3) "#dc2626" else "#1e40af"
-      badge_border <- if (win$days_left <= 3) "#fecaca" else "#bfdbfe"
+      badge_bg <- if (win$days_left <= 3) "#fef2f2" else "#f0f5e6"
+      badge_col <- if (win$days_left <= 3) "#dc2626" else "#4d6b1e"
+      badge_border <- if (win$days_left <= 3) "#fecaca" else "#c8dba0"
 
       div(style = sprintf("background:%s; color:%s; border:1px solid %s; font-size:12px; font-weight:700; padding:5px 12px; border-radius:6px; display:flex; align-items:center; gap:6px;", badge_bg, badge_col, badge_border),
         tags$svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="14", height="14",
@@ -502,10 +502,10 @@ studentPortalServer <- function(id, user, logout_trigger) {
     # ── INSTITUTIONAL NOTICE BANNER ────────────────────────────────────────────
     output$institutional_notice_banner <- renderUI({
       win <- feedback_window()
-      div(style = "background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #1e40af; border-radius:8px; padding:12px 18px; margin-bottom:20px; box-shadow:0 1px 2px rgba(0,0,0,0.02);",
+      div(style = "background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #4d6b1e; border-radius:8px; padding:12px 18px; margin-bottom:20px; box-shadow:0 1px 2px rgba(0,0,0,0.02);",
         div(style = "display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;",
           div(style = "display:flex; align-items:center; gap:10px;",
-            div(style = "width:30px; height:30px; background:#eff6ff; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#1e40af; flex-shrink:0;",
+            div(style = "width:30px; height:30px; background:#f0f5e6; border-radius:6px; display:flex; align-items:center; justify-content:center; color:#4d6b1e; flex-shrink:0;",
               tags$svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="16", height="16", fill="none", stroke="currentColor", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
                 tags$path(d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"),
                 tags$path(d="M13.73 21a2 2 0 0 1-3.46 0")
@@ -547,7 +547,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
             column(6,
               div(style = "display:flex; align-items:center; gap:8px; margin-bottom:6px;",
                 tags$svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="15", height="15",
-                  fill="none", stroke="#1e40af", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
+                  fill="none", stroke="#4d6b1e", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
                   tags$rect(x="3", y="4", width="18", height="18", rx="2", ry="2"),
                   tags$line(x1="16", y1="2", x2="16", y2="6"),
                   tags$line(x1="8", y1="2", x2="8", y2="6"),
@@ -644,7 +644,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
                     onclick = sprintf("Shiny.setInputValue('%s', %d, {priority:'event'})", ns("jump_subject"), idx),
                     div(style = "width:20px; height:20px; border-radius:50%; background:%s; color:%s; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700;",
                       if (is_curr) "#ffffff" else "#e2e8f0",
-                      if (is_curr) "#1e40af" else "#475569",
+                      if (is_curr) "#4d6b1e" else "#475569",
                       idx
                     ),
                     div(
@@ -700,7 +700,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
         div(style = "background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:14px 18px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;",
           div(
             div(style = "display:flex; align-items:center; gap:8px;",
-              span(style = "background:#1e40af; color:#ffffff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;", sprintf("Subject %d of 5", idx)),
+              span(style = "background:#4d6b1e; color:#ffffff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;", sprintf("Subject %d of 5", idx)),
               strong(style = "color:#0f172a; font-size:1.05rem;", sprintf("%s: %s", subj$course_code, subj$course_name))
             ),
             div(style = "color:#64748b; font-size:0.8125rem; margin-top:3px;",
@@ -708,7 +708,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
           ),
           div(style = "text-align:right;",
             span(style = "font-size:0.75rem; color:#64748b; display:block;", "Allocated Professor"),
-            strong(style = "color:#1e40af; font-size:0.9rem;", subj$teacher_name %||% "Assigned Faculty")
+            strong(style = "color:#4d6b1e; font-size:0.9rem;", subj$teacher_name %||% "Assigned Faculty")
           )
         ),
 
@@ -869,7 +869,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
         div(class = "st-card-header",
           tags$h3(class = "st-card-title",
             tags$svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="16", height="16",
-              fill="none", stroke="#1e40af", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
+              fill="none", stroke="#4d6b1e", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
               tags$path(d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"),
               tags$path(d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z")
             ),
@@ -887,7 +887,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
               div(style = "padding:14px 18px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;",
                 div(
                   div(style = "display:flex; align-items:center; gap:8px;",
-                    span(style = "background:#1e40af; color:#ffffff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;", sprintf("Subject %d", i)),
+                    span(style = "background:#4d6b1e; color:#ffffff; font-weight:700; font-size:0.75rem; padding:2px 8px; border-radius:4px;", sprintf("Subject %d", i)),
                     strong(style = "color:#0f172a; font-size:0.9375rem;", sprintf("%s: %s", r$course_code, r$course_name))
                   ),
                   div(style = "color:#64748b; font-size:0.8125rem; margin-top:4px;",
@@ -895,7 +895,7 @@ studentPortalServer <- function(id, user, logout_trigger) {
                 ),
                 div(style = "text-align:right;",
                   span(style = "font-size:0.72rem; color:#64748b; display:block;", "Assigned Professor"),
-                  strong(style = "color:#1e40af; font-size:0.875rem;", r$teacher_name %||% "Department Faculty"),
+                  strong(style = "color:#4d6b1e; font-size:0.875rem;", r$teacher_name %||% "Department Faculty"),
                   div(style = "font-size:0.75rem; color:#64748b; margin-top:2px;", r$teacher_email %||% "")
                 )
               )
@@ -959,13 +959,13 @@ studentPortalServer <- function(id, user, logout_trigger) {
         div(class = "st-card-header",
           tags$h3(class = "st-card-title",
             tags$svg(xmlns="http://www.w3.org/2000/svg", viewBox="0 0 24 24", width="16", height="16",
-              fill="none", stroke="#1e40af", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
+              fill="none", stroke="#4d6b1e", strokeWidth="2", strokeLinecap="round", strokeLinejoin="round",
               tags$path(d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"),
               tags$path(d="M13.73 21a2 2 0 0 1-3.46 0")
             ),
             "Office of the Principal — Feedback Cycle Policy"
           ),
-          span(style = "background:#eff6ff; color:#1e40af; font-size:0.75rem; font-weight:700; padding:3px 9px; border-radius:4px; border:1px solid #bfdbfe;",
+          span(style = "background:#f0f5e6; color:#4d6b1e; font-size:0.75rem; font-weight:700; padding:3px 9px; border-radius:4px; border:1px solid #c8dba0;",
             win$term_name)
         ),
 

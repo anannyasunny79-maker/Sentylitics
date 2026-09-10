@@ -93,7 +93,7 @@ adminPortalUI <- function(id) {
         }
         .gw-brand-icon {
           width: 38px; height: 38px;
-          background: #1e40af;
+          background: #4d6b1e;
           border-radius: 8px;
           display: flex; align-items: center; justify-content: center;
           color: #ffffff;
@@ -145,12 +145,12 @@ adminPortalUI <- function(id) {
           color: #0f172a;
         }
         .gw-nav-btn.active {
-          background: #eff6ff !important;
-          color: #1e40af !important;
+          background: #f0f5e6 !important;
+          color: #4d6b1e !important;
           font-weight: 600;
-          border-left: 3px solid #1e40af;
+          border-left: 3px solid #4d6b1e;
         }
-        .gw-nav-btn.active svg { stroke: #1e40af !important; }
+        .gw-nav-btn.active svg { stroke: #4d6b1e !important; }
 
         /* Sidebar user footer */
         .gw-sidebar-user {
@@ -177,7 +177,7 @@ adminPortalUI <- function(id) {
           display: inline-flex;
           align-items: center;
           background: #f1f5f9;
-          color: #1e40af;
+          color: #4d6b1e;
           font-weight: 600;
           padding: 2px 8px;
           border-radius: 4px;
@@ -322,9 +322,9 @@ adminPortalUI <- function(id) {
           flex-direction: column;
           gap: 6px;
           box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-          border-left: 3px solid #1e40af;
+          border-left: 3px solid #4d6b1e;
         }
-        .gw-kpi-card.tot { border-left-color: #1e40af; }
+        .gw-kpi-card.tot { border-left-color: #4d6b1e; }
         .gw-kpi-card.pos { border-left-color: #059669; }
         .gw-kpi-card.neg { border-left-color: #dc2626; }
         .gw-kpi-card.neu { border-left-color: #d97706; }
@@ -459,7 +459,7 @@ adminPortalUI <- function(id) {
         }
         .gw-action-item:last-child { border-bottom: none; }
         .gw-action-num {
-          width: 18px; height: 18px; background: #1e40af; color: #fff;
+          width: 18px; height: 18px; background: #4d6b1e; color: #fff;
           border-radius: 50%; font-size: 0.65rem; font-weight: 700;
           display: flex; align-items: center; justify-content: center; flex-shrink: 0;
         }
@@ -492,9 +492,9 @@ adminPortalUI <- function(id) {
           margin-left: 4px;
         }
         .gw-pill-btn.active {
-          background: #1e40af;
+          background: #4d6b1e;
           color: #ffffff;
-          border-color: #1e40af;
+          border-color: #4d6b1e;
         }
 
         /* Responsive */
@@ -568,7 +568,7 @@ adminPortalUI <- function(id) {
             # PDF export
             downloadButton(ns("export_pdf"),
               label = HTML("<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='13' height='13' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' style='vertical-align:middle;margin-right:4px;'><polyline points='6 9 6 2 18 2 18 9'/><path d='M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2'/><rect x='6' y='14' width='12' height='8'/></svg>Export Brief"),
-              style = "background:#1e40af;color:#fff;border:none;border-radius:6px;font-weight:600;font-size:0.8rem;padding:6px 12px;height:34px;display:inline-flex;align-items:center;"
+              style = "background:#4d6b1e;color:#fff;border:none;border-radius:6px;font-weight:600;font-size:0.8rem;padding:6px 12px;height:34px;display:inline-flex;align-items:center;"
             )
           )
         ),
@@ -696,7 +696,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
       tagList(
         span(class = "gw-scope-badge", sem_lbl),
         span(class = "gw-scope-badge", dept_lbl),
-        span(class = "gw-scope-badge", style = "background:#eff6ff;color:#1e40af;border-color:#bfdbfe;",
+        span(class = "gw-scope-badge", style = "background:#f0f5e6;color:#4d6b1e;border-color:#c8dba0;",
           sprintf("%s responses", formatC(n, format = "d", big.mark = ",")))
       )
     })
@@ -791,7 +791,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         div(class = "gw-card",
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;",
             p(class = "gw-card-title", style = "margin:0;", "Academic Cycle Submission Volume & Sentiment"),
-            span(style = "font-size:0.75rem; color:#1e40af; font-weight:600; background:#eff6ff; padding:3px 8px; border-radius:4px; border:1px solid #bfdbfe;", "Chronological Timeline")
+            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "Chronological Timeline")
           ),
           p(class = "gw-card-sub", "Submission volume and sentiment distribution across semesters and feedback cycles"),
           plotlyOutput(ns("chart_overview_timeline"), height = "280px")
@@ -817,7 +817,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;",
             p(class = "gw-card-title", style = "margin:0;", "Qualitative Insights & Recommended Actions"),
             actionButton(ns("btn_refresh_ai"), "Refresh Analysis",
-              style = "background:#1e40af; color:#fff; border:none; border-radius:4px; font-size:0.75rem; font-weight:600; padding:5px 12px;")
+              style = "background:#4d6b1e; color:#fff; border:none; border-radius:4px; font-size:0.75rem; font-weight:600; padding:5px 12px;")
           ),
           p(class = "gw-card-sub", "Automated feedback text analysis and key institutional action items"),
           uiOutput(ns("ai_insights_ui"))
@@ -827,7 +827,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         div(class = "gw-card",
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;",
             p(class = "gw-card-title", style = "margin:0;", "Department Feedback Submission Readiness Tracker"),
-            span(style = "font-size:0.75rem; color:#1e40af; font-weight:600; background:#eff6ff; padding:3px 8px; border-radius:4px; border:1px solid #bfdbfe;", "College-Wide Quota Tracking")
+            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "College-Wide Quota Tracking")
           ),
           p(class = "gw-card-sub", "Monitor which engineering departments have met evaluation readiness vs pending submissions"),
           DT::dataTableOutput(ns("dept_readiness_table"))
@@ -938,7 +938,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         div(class = "gw-card",
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;",
             p(class = "gw-card-title", style = "margin:0;", "Faculty 4-Subject Allocation & Performance Registry"),
-            span(style = "font-size:0.75rem; color:#1e40af; font-weight:600; background:#eff6ff; padding:3px 8px; border-radius:4px; border:1px solid #bfdbfe;", "Institutional 4-Subject Allocation Rule")
+            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "Institutional 4-Subject Allocation Rule")
           ),
           p(class = "gw-card-sub", "Verified academic subject allocations (4 subjects assigned per faculty instructor) and evaluation metrics"),
           DT::dataTableOutput(ns("faculty_allocations_table"))
@@ -995,7 +995,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
           ),
           div(class = "gw-kpi-card pos",
             span(class = "gw-kpi-label", "Avg Sentiment Polarity"),
-            div(class = "gw-kpi-value", style = "color:#1e40af;", sprintf("%+.2f", avg_sent)),
+            div(class = "gw-kpi-value", style = "color:#4d6b1e;", sprintf("%+.2f", avg_sent)),
             span(class = "gw-kpi-sub", "range: -1.00 to +1.00")
           ),
           div(class = "gw-kpi-card pos",
@@ -1046,8 +1046,8 @@ adminPortalServer <- function(id, user, logout_trigger) {
       win <- active_window_data()
       tagList(
         # Broadcast Institutional Notice & Deadline Manager Card
-        div(class = "gw-settings-group", style = "border-left:4px solid #1e40af;",
-          div(class = "gw-settings-title", style = "font-size:1rem; color:#1e40af;",
+        div(class = "gw-settings-group", style = "border-left:4px solid #4d6b1e;",
+          div(class = "gw-settings-title", style = "font-size:1rem; color:#4d6b1e;",
             "Institutional Feedback Notice & Submission Deadline Broadcast"),
           div(class = "gw-settings-desc",
             "Set the official evaluation term name, deadline date, and announcement text. When published, this notification will be broadcast prominently to all student and faculty portals."),
@@ -1092,7 +1092,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         ),
         div(class = "gw-settings-group",
           actionButton(ns("btn_save_settings"), "Save General Settings",
-            style = "background:#1e40af; color:#fff; font-weight:600; border:none; padding:8px 20px; border-radius:6px; cursor:pointer;"),
+            style = "background:#4d6b1e; color:#fff; font-weight:600; border:none; padding:8px 20px; border-radius:6px; cursor:pointer;"),
           uiOutput(ns("settings_saved_msg"))
         )
       )
@@ -1118,7 +1118,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
     # Top notice strip in overview
     output$admin_notice_strip_ui <- renderUI({
       win <- active_window_data()
-      div(style = "background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #1e40af; border-radius:8px; padding:12px 18px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;",
+      div(style = "background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #4d6b1e; border-radius:8px; padding:12px 18px; margin-bottom:16px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;",
         div(
           strong(style = "color:#0f172a; font-size:0.88rem;", sprintf("Active Evaluation Window: %s", win$term_name)),
           span(style = "color:#64748b; font-size:0.8rem; margin-left:8px;", sprintf("Deadline: %s (%d days remaining)", format(as.Date(win$deadline_date), "%b %d, %Y"), win$days_left))
@@ -1134,7 +1134,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
     observeEvent(input$btn_save_settings, {
       output$settings_saved_msg <- renderUI({
-        div(style = "margin-top:10px; color:#1e40af; font-weight:600; font-size:0.84rem;",
+        div(style = "margin-top:10px; color:#4d6b1e; font-weight:600; font-size:0.84rem;",
           "Settings saved successfully.")
       })
     })
@@ -1564,7 +1564,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
       depts <- unique(trends$teacher_dept)
       p <- plot_ly()
-      colors <- c("#1e40af", "#059669", "#d97706", "#7c3aed", "#db2777", "#0891b2", "#ea580c", "#475569")
+      colors <- c("#4d6b1e", "#059669", "#d97706", "#7c3aed", "#db2777", "#0891b2", "#ea580c", "#475569")
 
       for (i in seq_along(depts)) {
         d_name <- depts[i]
@@ -1716,7 +1716,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
       div(style = "background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:12px; font-size:0.8rem;",
         div(style = "display:flex; justify-content:space-between; align-items:center;",
           span(style = "font-weight:700; color:#0f172a; font-size:0.875rem;", sel_t),
-          span(style = "font-weight:600; color:#1e40af;", status_msg)
+          span(style = "font-weight:600; color:#4d6b1e;", status_msg)
         ),
         div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px; color:#475569;",
           div(span("Sem 1 Positivity: "), tags$b(sprintf("%.1f%%", first_pos))),
@@ -1738,8 +1738,8 @@ adminPortalServer <- function(id, user, logout_trigger) {
       sub <- sub[order(sub$sem_num), ]
 
       plot_ly(sub, x = ~semester, y = ~pos_pct, type = "scatter", mode = "lines+markers",
-              name = "Positivity %", line = list(color = "#1e40af", width = 2.5),
-              marker = list(color = "#1e40af", size = 7)) %>%
+              name = "Positivity %", line = list(color = "#4d6b1e", width = 2.5),
+              marker = list(color = "#4d6b1e", size = 7)) %>%
         add_trace(y = ~avg_rating * 20, name = "Avg Rating (x20)", line = list(color = "#059669", width = 2, dash = "dash"),
                   marker = list(color = "#059669", size = 5)) %>%
         layout(
@@ -1768,7 +1768,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
       aspects <- unique(sub_df$aspect)
       p <- plot_ly()
-      colors <- c("#1e40af", "#059669", "#d97706", "#7c3aed", "#db2777", "#0891b2")
+      colors <- c("#4d6b1e", "#059669", "#d97706", "#7c3aed", "#db2777", "#0891b2")
 
       for (i in seq_along(aspects)) {
         asp <- aspects[i]
@@ -1890,7 +1890,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
 
       items <- lapply(seq_len(nrow(top50)), function(i) {
         r <- top50[i, ]
-        bg <- if (!is.null(sel) && sel == r$id) "#eff6ff" else "#fff"
+        bg <- if (!is.null(sel) && sel == r$id) "#f0f5e6" else "#fff"
         badge_cls <- if (r$rating == 1) "gw-tag good" else if (r$rating == -1) "gw-tag critical" else "gw-tag"
         badge_lbl <- if (r$rating == 1) "Positive" else if (r$rating == -1) "Negative" else "Neutral"
 
@@ -1942,7 +1942,7 @@ adminPortalServer <- function(id, user, logout_trigger) {
         ),
         div(
           span(style="font-size:0.7rem;color:#64748b;text-transform:uppercase;font-weight:700;display:block;margin-bottom:4px;","Student Feedback"),
-          tags$blockquote(style="margin:0; padding:10px 14px; border-left:3px solid #1e40af; font-size:0.84rem; color:#0f172a; line-height:1.5; font-style:italic; background:#fff; border-radius:0 6px 6px 0; border-top:1px solid #e2e8f0; border-right:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;", item$text)
+          tags$blockquote(style="margin:0; padding:10px 14px; border-left:3px solid #4d6b1e; font-size:0.84rem; color:#0f172a; line-height:1.5; font-style:italic; background:#fff; border-radius:0 6px 6px 0; border-top:1px solid #e2e8f0; border-right:1px solid #e2e8f0; border-bottom:1px solid #e2e8f0;", item$text)
         ),
         div(style="background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding:12px 14px;",
           span(style="font-size:0.7rem; color:#64748b; text-transform:uppercase; font-weight:700; display:block; margin-bottom:4px;","Assessment & Recommended Action"),

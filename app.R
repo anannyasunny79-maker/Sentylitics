@@ -1,5 +1,5 @@
 # app.R — Campus Listen | Institutional College Feedback & Sentiment Analytics Platform
-# Unified Institutional Design System: Deep Blue (#1e40af, #1e3a8a), Slate (#f8fafc, #0f172a), Inter Typography
+# Unified Institutional Design System: Deep Blue (#4d6b1e, #3d5516), Slate (#f8fafc, #0f172a), Inter Typography
 
 library(shiny)
 library(shinyjs)
@@ -16,6 +16,9 @@ source("helpers/export.R",           local = FALSE)
 source("modules/student_portal.R",   local = FALSE)
 source("modules/faculty_portal.R",   local = FALSE)
 source("modules/admin_portal.R",     local = FALSE)
+
+addResourcePath("assets", "C:/Users/Student/.gemini/antigravity-ide/brain/2eb42f98-d304-4733-b057-93d7608316c4")
+addResourcePath("www", "www")
 
 # Load machine learning model bundle
 MODEL_BUNDLE <- NULL
@@ -77,33 +80,30 @@ SHARED_CSS <- "
   }
 
   /* ================================================================
-     AUTHENTICATION VIEW
+     AUTHENTICATION VIEW — FULL PAGE GRADIENT WITH CENTERED PANEL
   ================================================================ */
   .login-page {
     display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
     width: 100%;
-    background-color: #f8fafc;
-  }
-
-  /* Left Branding Panel */
-  .login-left {
-    width: 42%;
-    min-width: 380px;
-    background-color: #24310f;
-    background-image:
-      linear-gradient(150deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 58, 138, 0.72) 58%, rgba(30, 64, 175, 0.48) 100%),
-      url(\"https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=1400&q=85\");
-    background-position: center;
+    position: relative;
+    padding: 48px 24px;
+    background-color: #f2f1ee;
+    background-image: url('www/login_bg.png');
+    background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 48px 56px;
-    color: #ffffff;
-    position: relative;
-    flex-shrink: 0;
+    background-attachment: fixed;
+  }
+
+  /* Top Left Branding Logo */
+  .cl-brand-top-left {
+    position: absolute;
+    top: 32px;
+    left: 40px;
+    z-index: 10;
   }
   .cl-brand {
     display: flex;
@@ -112,15 +112,15 @@ SHARED_CSS <- "
   }
   .cl-brand-icon {
     width: 36px; height: 36px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(77, 107, 30, 0.12);
+    border: 1px solid rgba(77, 107, 30, 0.3);
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
   .cl-brand-text { display: flex; flex-direction: column; gap: 2px; }
   .cl-brand-name {
-    color: #ffffff;
+    color: #1a2608;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -128,60 +128,35 @@ SHARED_CSS <- "
     line-height: 1;
   }
   .cl-brand-sub {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(50, 70, 20, 0.7);
     font-size: 11px;
     letter-spacing: 0.02em;
     line-height: 1;
   }
-  .cl-headline-block {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 48px 0;
-  }
-  .cl-overline {
-    color: #93c5fd;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  .cl-headline {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.25rem;
-    font-weight: 700;
-    color: #ffffff;
-    line-height: 1.2;
-    margin: 0 0 16px 0;
-    letter-spacing: -0.03em;
-  }
-  .cl-subtext {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    max-width: 360px;
-  }
-  .cl-left-footer {
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding-top: 20px;
-    color: rgba(255, 255, 255, 0.5);
+
+  /* Bottom Left Confidential Footer */
+  .cl-left-footer-bottom-left {
+    position: absolute;
+    bottom: 28px;
+    left: 40px;
+    color: rgba(50, 70, 20, 0.65);
     font-size: 12px;
     line-height: 1.5;
+    z-index: 10;
   }
 
-  /* Right Authentication Panel */
-  .login-right {
-    flex: 1;
-    background-color: #f8fafc;
+  /* Centered Login Container */
+  .login-center-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 48px 32px;
-    min-height: 100vh;
+    width: 100%;
+    max-width: 460px;
+    z-index: 20;
+    margin: auto;
   }
+
   .login-card {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -189,12 +164,12 @@ SHARED_CSS <- "
     padding: 36px 40px;
     width: 100%;
     max-width: 460px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
     animation: cl-fadeSlideUp 0.35s ease-out both;
   }
   .login-card-overline {
     display: block;
-    color: #1e40af;
+    color: #4d6b1e;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.08em;
@@ -244,8 +219,8 @@ SHARED_CSS <- "
   .login-card .form-control:focus,
   .login-card input:focus,
   .login-card select:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+    border-color: #6b8c2a !important;
+    box-shadow: 0 0 0 3px rgba(90, 112, 34, 0.12) !important;
   }
   .login-card .form-group { margin-bottom: 14px; }
 
@@ -275,7 +250,7 @@ SHARED_CSS <- "
   }
   .auth-tab-btn.active {
     background: #ffffff;
-    color: #1e40af;
+    color: #4d6b1e;
     font-weight: 600;
     box-shadow: 0 1px 2px rgba(0,0,0,0.06);
   }
@@ -283,9 +258,9 @@ SHARED_CSS <- "
   /* Primary Button */
   .btn-login {
     width: 100% !important;
-    background: #1e40af !important;
+    background: #4d6b1e !important;
     color: #ffffff !important;
-    border: 1px solid #1e3a8a !important;
+    border: 1px solid #3d5516 !important;
     border-radius: 6px !important;
     padding: 10px 18px !important;
     font-size: 13.5px !important;
@@ -300,7 +275,7 @@ SHARED_CSS <- "
     transition: background-color 0.15s ease !important;
   }
   .btn-login:hover {
-    background: #1d4ed8 !important;
+    background: #5a7a22 !important;
   }
 
   /* Demo Credentials helper */
@@ -319,7 +294,7 @@ SHARED_CSS <- "
     border-radius: 6px;
     border: 1px solid #cbd5e1;
     background: #ffffff;
-    color: #1e40af;
+    color: #4d6b1e;
     font-size: 12px;
     font-weight: 600;
     cursor: pointer;
@@ -327,8 +302,8 @@ SHARED_CSS <- "
     text-align: center;
   }
   .demo-btn:hover {
-    background: #eff6ff;
-    border-color: #93c5fd;
+    background: #f0f5e6;
+    border-color: #9bbf60;
   }
 
   .login-error-box {
@@ -348,7 +323,7 @@ SHARED_CSS <- "
     color: #64748b;
   }
   .auth-switch-action {
-    color: #1e40af;
+    color: #4d6b1e;
     font-weight: 600;
     cursor: pointer;
     background: none;
@@ -407,7 +382,7 @@ SHARED_CSS <- "
     letter-spacing: 0.02em;
     text-transform: uppercase;
   }
-  .role-badge.badge-student { background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; }
+  .role-badge.badge-student { background: #f0f5e6; color: #4d6b1e; border: 1px solid #c8dba0; }
   .role-badge.badge-faculty { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; }
   .role-badge.badge-admin   { background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; }
 
@@ -435,21 +410,21 @@ SHARED_CSS <- "
     outline: none !important;
   }
   .form-control:focus, input:focus, select:focus, textarea:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12) !important;
+    border-color: #6b8c2a !important;
+    box-shadow: 0 0 0 3px rgba(90, 112, 34, 0.12) !important;
   }
 
   /* Standard Buttons */
   .btn-primary {
-    background: #1e40af !important;
-    border-color: #1e3a8a !important;
+    background: #4d6b1e !important;
+    border-color: #3d5516 !important;
     color: #ffffff !important;
     font-weight: 600 !important;
     border-radius: 6px !important;
     font-size: 13px !important;
     padding: 7px 14px !important;
   }
-  .btn-primary:hover { background: #1d4ed8 !important; }
+  .btn-primary:hover { background: #5a7a22 !important; }
   .btn-outline-secondary {
     background: #ffffff !important;
     border: 1px solid #cbd5e1 !important;
@@ -479,16 +454,16 @@ SHARED_CSS <- "
     color: #0f172a !important;
   }
   .nav-tabs .nav-link.active {
-    color: #1e40af !important;
-    border-bottom: 2px solid #1e40af !important;
+    color: #4d6b1e !important;
+    border-bottom: 2px solid #4d6b1e !important;
     font-weight: 600 !important;
     background: transparent !important;
   }
 
   /* Sliders — clean slate/blue */
-  .irs--shiny .irs-bar { background: #1e40af !important; border-color: #1e40af !important; }
-  .irs--shiny .irs-handle { border: 2px solid #1e40af !important; background: #ffffff !important; width: 18px !important; height: 18px !important; top: 22px !important; }
-  .irs--shiny .irs-from, .irs--shiny .irs-to, .irs--shiny .irs-single { background: #1e40af !important; border-radius: 4px !important; font-size: 11px !important; }
+  .irs--shiny .irs-bar { background: #4d6b1e !important; border-color: #4d6b1e !important; }
+  .irs--shiny .irs-handle { border: 2px solid #4d6b1e !important; background: #ffffff !important; width: 18px !important; height: 18px !important; top: 22px !important; }
+  .irs--shiny .irs-from, .irs--shiny .irs-to, .irs--shiny .irs-single { background: #4d6b1e !important; border-radius: 4px !important; font-size: 11px !important; }
   .irs--shiny .irs-line { background: #e2e8f0 !important; }
   .irs-min, .irs-max, .irs-grid-text { color: #64748b !important; font-size: 11px !important; }
 
@@ -570,15 +545,13 @@ server <- function(input, output, session) {
       # ── INSTITUTIONAL LOGIN / SIGNUP VIEW ─────────────────────────────────
       div(class = "login-page",
 
-        # ── LEFT PANEL ──────────────────────────────────────────────────
-        div(class = "login-left",
-
-          # Institutional Brand Header
+        # Top-Left Brand Header
+        div(class = "cl-brand-top-left",
           div(class = "cl-brand",
             div(class = "cl-brand-icon",
               tags$svg(
                 xmlns = "http://www.w3.org/2000/svg", viewBox = "0 0 24 24",
-                style = "width:20px;height:20px;fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;",
+                style = "width:20px;height:20px;fill:none;stroke:#4d6b1e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;",
                 tags$path(d = "M22 10v6M2 10l10-5 10 5-10 5z"),
                 tags$path(d = "M6 12v5c3 3 9 3 12 0v-5")
               )
@@ -587,25 +560,16 @@ server <- function(input, output, session) {
               div(class = "cl-brand-name", "Campus Listen"),
               div(class = "cl-brand-sub",  "Institutional Analytics Platform")
             )
-          ),
-
-          # Headline block
-          div(class = "cl-headline-block",
-            div(class = "cl-overline", "Academic Governance & Feedback"),
-            tags$h1(class = "cl-headline", "Data-driven insights for academic excellence."),
-            div(class = "cl-subtext",
-              "A centralized institutional feedback workspace for continuous pedagogical evaluation and campus intelligence."
-            )
-          ),
-
-          # Footer
-          div(class = "cl-left-footer",
-            "Confidential, standardized academic quality assurance portal."
           )
         ),
 
-        # ── RIGHT PANEL ─────────────────────────────────────────────────
-        div(class = "login-right",
+        # Bottom-Left Confidential Footer
+        div(class = "cl-left-footer-bottom-left",
+          "Confidential, standardized academic quality assurance portal."
+        ),
+
+        # Centered Floating Form Container
+        div(class = "login-center-container",
 
           # Authentication Card
           div(class = "login-card",

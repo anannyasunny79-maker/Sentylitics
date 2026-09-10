@@ -4,11 +4,11 @@
 options(repos = c(CRAN = "https://cloud.r-project.org"))
 
 required_packages <- c(
-  "shiny", "shinythemes", "shinydashboard", "shinyjs",
-  "plotly", "ggplot2", "wordcloud2",
-  "caret", "e1071", "kernlab", "randomForest",
+  "shiny", "shinythemes", "shinydashboard", "shinyjs", "bslib",
+  "plotly", "ggplot2", "wordcloud2", "DT",
+  "caret", "e1071", "kernlab", "randomForest", "nnet",
   "tidytext", "tokenizers", "tm", "stringr", "textclean", "textstem",
-  "DBI", "RPostgres", "readxl", "jsonlite"
+  "DBI", "RSQLite", "RPostgres", "readxl", "jsonlite"
 )
 
 # Function to check and install missing packages

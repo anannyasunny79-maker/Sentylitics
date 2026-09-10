@@ -1,5 +1,5 @@
 # modules/faculty_portal.R — Faculty Insights Dashboard
-# Institutional Design System: Deep Blue (#1e40af) + 4 Assigned Subjects Breakdown + Precise Analytics
+# Institutional Design System: Deep Blue (#4d6b1e) + 4 Assigned Subjects Breakdown + Precise Analytics
 
 library(shiny)
 library(plotly)
@@ -68,7 +68,7 @@ facultyPortalUI <- function(id) {
         }
         .fc-brand-icon {
           width: 38px; height: 38px;
-          background: #1e40af;
+          background: #4d6b1e;
           border-radius: 8px;
           display: flex; align-items: center; justify-content: center;
           color: #ffffff;
@@ -117,12 +117,12 @@ facultyPortalUI <- function(id) {
         }
         .fc-nav-btn:hover { background: #f1f5f9; color: #0f172a; }
         .fc-nav-btn.active {
-          background: #eff6ff !important;
-          color: #1e40af !important;
+          background: #f0f5e6 !important;
+          color: #4d6b1e !important;
           font-weight: 600;
-          border-left: 3px solid #1e40af;
+          border-left: 3px solid #4d6b1e;
         }
-        .fc-nav-btn.active svg { stroke: #1e40af !important; }
+        .fc-nav-btn.active svg { stroke: #4d6b1e !important; }
 
         /* Sidebar footer */
         .fc-sidebar-user {
@@ -231,9 +231,9 @@ facultyPortalUI <- function(id) {
           flex-direction: column;
           gap: 6px;
           box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-          border-left: 3px solid #1e40af;
+          border-left: 3px solid #4d6b1e;
         }
-        .fc-kpi-card.tot { border-left-color: #1e40af; }
+        .fc-kpi-card.tot { border-left-color: #4d6b1e; }
         .fc-kpi-card.pos { border-left-color: #059669; }
         .fc-kpi-card.neg { border-left-color: #dc2626; }
         .fc-kpi-card.neu { border-left-color: #d97706; }
@@ -264,13 +264,13 @@ facultyPortalUI <- function(id) {
           border: 1px solid #e2e8f0;
           border-radius: 8px;
           padding: 14px 16px;
-          border-top: 3px solid #1e40af;
+          border-top: 3px solid #4d6b1e;
           transition: border-color 0.15s;
         }
         .fc-course-code {
           font-size: 0.72rem;
           font-weight: 700;
-          color: #1e40af;
+          color: #4d6b1e;
           text-transform: uppercase;
           letter-spacing: 0.04em;
         }
@@ -299,14 +299,14 @@ facultyPortalUI <- function(id) {
         .fc-aspect-row:hover { background: #f8fafc; border-color: #e2e8f0; }
         .fc-aspect-icon-wrap {
           width: 28px; height: 28px; border-radius: 6px;
-          background: #f1f5f9; color: #1e40af;
+          background: #f1f5f9; color: #4d6b1e;
           display: flex; align-items: center; justify-content: center;
           flex-shrink: 0;
         }
         .fc-aspect-label { font-weight: 600; font-size: 0.84rem; color: #0f172a; min-width: 140px; }
         .fc-aspect-bar-wrap { flex: 1; height: 6px; background: #f1f5f9; border-radius: 9999px; overflow: hidden; }
         .fc-aspect-bar-fill { height: 100%; border-radius: 9999px; }
-        .fc-aspect-pct { font-size: 0.8125rem; font-weight: 600; color: #1e40af; min-width: 40px; text-align: right; }
+        .fc-aspect-pct { font-size: 0.8125rem; font-weight: 600; color: #4d6b1e; min-width: 40px; text-align: right; }
         .fc-aspect-count { font-size: 0.75rem; color: #94a3b8; min-width: 50px; text-align: right; }
 
         /* Comment cards */
@@ -331,7 +331,7 @@ facultyPortalUI <- function(id) {
         /* Profile section */
         .fc-profile-avatar {
           width: 56px; height: 56px;
-          background: #1e40af;
+          background: #4d6b1e;
           border-radius: 8px;
           display: flex; align-items: center; justify-content: center;
           color: #ffffff;
@@ -623,12 +623,12 @@ facultyPortalServer <- function(id, user, logout_trigger) {
       } else { NULL }
 
       # Institutional Notice Banner
-      notice_banner <- div(style = "background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #1e40af; border-radius:8px; padding:12px 18px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;",
+      notice_banner <- div(style = "background:#ffffff; border:1px solid #e2e8f0; border-left:4px solid #4d6b1e; border-radius:8px; padding:12px 18px; margin-bottom:18px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;",
         div(
           strong(style = "color:#0f172a; font-size:0.88rem; display:block;", sprintf("Official Notice: %s", win$term_name)),
           span(style = "color:#475569; font-size:0.8125rem;", win$description)
         ),
-        span(style = "background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe; font-size:0.75rem; font-weight:700; padding:3px 9px; border-radius:4px; text-transform:uppercase;",
+        span(style = "background:#f0f5e6; color:#4d6b1e; border:1px solid #c8dba0; font-size:0.75rem; font-weight:700; padding:3px 9px; border-radius:4px; text-transform:uppercase;",
           sprintf("Deadline: %s (%d Days Left)", format(as.Date(win$deadline_date), "%b %d"), win$days_left))
       )
 
@@ -642,7 +642,7 @@ facultyPortalServer <- function(id, user, logout_trigger) {
               h4(style = "font-size:0.9375rem; font-weight:700; color:#0f172a; margin:0;", "My 4 Assigned Academic Courses"),
               p(style = "font-size:0.8125rem; color:#64748b; margin:2px 0 0 0;", "Instructional course allocation across academic semesters")
             ),
-            span(style = "background:#eff6ff; color:#1e40af; font-weight:600; font-size:0.75rem; padding:3px 8px; border-radius:4px; border:1px solid #bfdbfe;",
+            span(style = "background:#f0f5e6; color:#4d6b1e; font-weight:600; font-size:0.75rem; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;",
               "4 Courses Assigned")
           ),
           div(class = "fc-courses-grid", course_cards)
@@ -796,7 +796,7 @@ facultyPortalServer <- function(id, user, logout_trigger) {
                 paste0(user$email %||% "faculty@college.edu", "  •  ", user$department %||% "Department")),
               span(class = "fc-profile-badge", "Faculty Member"),
               tags$span(" "),
-              span(class = "fc-profile-badge", style = "background:#eff6ff;color:#1e40af;border-color:#bfdbfe;",
+              span(class = "fc-profile-badge", style = "background:#f0f5e6;color:#4d6b1e;border-color:#c8dba0;",
                 paste0(user$department %||% "Academic Department"))
             )
           )
@@ -897,8 +897,8 @@ facultyPortalServer <- function(id, user, logout_trigger) {
         
         plot_ly(sem_df, x = ~semester, y = ~rating,
           type = "scatter", mode = "lines+markers",
-          line   = list(color = "#1e40af", width = 2.5),
-          marker = list(color = "#1e40af", size = 8,
+          line   = list(color = "#4d6b1e", width = 2.5),
+          marker = list(color = "#4d6b1e", size = 8,
                         line = list(color = "#ffffff", width = 2)),
           text = ~paste0(semester, "<br>Avg Score: ", rating, " / 5"),
           hoverinfo = "text"
@@ -924,8 +924,8 @@ facultyPortalServer <- function(id, user, logout_trigger) {
         
         plot_ly(monthly, x = ~mon_label, y = ~round(rating, 2),
           type = "scatter", mode = "lines+markers",
-          line = list(color = "#1e40af", width = 2.5),
-          marker = list(color = "#1e40af", size = 8, line = list(color="#fff", width=2))
+          line = list(color = "#4d6b1e", width = 2.5),
+          marker = list(color = "#4d6b1e", size = 8, line = list(color="#fff", width=2))
         ) %>% layout(
           paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
           xaxis = list(
@@ -973,8 +973,8 @@ facultyPortalServer <- function(id, user, logout_trigger) {
       plot_ly(sem_df, x = ~semester, y = ~rating,
         type = "scatter", mode = "lines+markers+text",
         text = ~round(rating, 1), textposition = "top center",
-        line   = list(color="#1e40af", width=2.5),
-        marker = list(color="#1e40af", size=8, line=list(color="#fff",width=2))
+        line   = list(color="#4d6b1e", width=2.5),
+        marker = list(color="#4d6b1e", size=8, line=list(color="#fff",width=2))
       ) %>% layout(
         paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
         xaxis = list(
@@ -1021,9 +1021,9 @@ facultyPortalServer <- function(id, user, logout_trigger) {
         r    = values,
         theta = categories,
         fill  = "toself",
-        fillcolor = "rgba(30, 64, 175, 0.12)",
-        line  = list(color = "#1e40af", width = 2),
-        marker = list(color = "#1e40af", size = 6)
+        fillcolor = "rgba(77, 107, 30, 0.12)",
+        line  = list(color = "#4d6b1e", width = 2),
+        marker = list(color = "#4d6b1e", size = 6)
       ) %>% layout(
         polar = list(
           radialaxis = list(visible=TRUE, range=c(0,100), color="#64748b",
