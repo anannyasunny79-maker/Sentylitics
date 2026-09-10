@@ -17,7 +17,8 @@ source("modules/student_portal.R",   local = FALSE)
 source("modules/faculty_portal.R",   local = FALSE)
 source("modules/admin_portal.R",     local = FALSE)
 
-addResourcePath("assets", "C:/Users/Student/.gemini/antigravity-ide/brain/2eb42f98-d304-4733-b057-93d7608316c4")
+assets_path <- "C:/Users/Student/.gemini/antigravity-ide/brain/2eb42f98-d304-4733-b057-93d7608316c4"
+if (dir.exists(assets_path)) addResourcePath("assets", assets_path)
 addResourcePath("www", "www")
 
 # Load machine learning model bundle
@@ -90,8 +91,7 @@ SHARED_CSS <- "
     width: 100%;
     position: relative;
     padding: 48px 24px;
-    background-color: #f2f1ee;
-    background-image: url('www/login_bg.png');
+    background: linear-gradient(135deg, rgba(77, 107, 30, 0.85), rgba(30, 43, 10, 0.90)), url('www/login_bg.png');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -112,15 +112,15 @@ SHARED_CSS <- "
   }
   .cl-brand-icon {
     width: 36px; height: 36px;
-    background: rgba(77, 107, 30, 0.12);
-    border: 1px solid rgba(77, 107, 30, 0.3);
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     border-radius: 8px;
     display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
   }
   .cl-brand-text { display: flex; flex-direction: column; gap: 2px; }
   .cl-brand-name {
-    color: #1a2608;
+    color: #ffffff;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -128,7 +128,7 @@ SHARED_CSS <- "
     line-height: 1;
   }
   .cl-brand-sub {
-    color: rgba(50, 70, 20, 0.7);
+    color: rgba(255, 255, 255, 0.82);
     font-size: 11px;
     letter-spacing: 0.02em;
     line-height: 1;
@@ -139,7 +139,7 @@ SHARED_CSS <- "
     position: absolute;
     bottom: 28px;
     left: 40px;
-    color: rgba(50, 70, 20, 0.65);
+    color: rgba(255, 255, 255, 0.75);
     font-size: 12px;
     line-height: 1.5;
     z-index: 10;
@@ -551,7 +551,7 @@ server <- function(input, output, session) {
             div(class = "cl-brand-icon",
               tags$svg(
                 xmlns = "http://www.w3.org/2000/svg", viewBox = "0 0 24 24",
-                style = "width:20px;height:20px;fill:none;stroke:#4d6b1e;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;",
+                style = "width:20px;height:20px;fill:none;stroke:#ffffff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;",
                 tags$path(d = "M22 10v6M2 10l10-5 10 5-10 5z"),
                 tags$path(d = "M6 12v5c3 3 9 3 12 0v-5")
               )
@@ -563,10 +563,6 @@ server <- function(input, output, session) {
           )
         ),
 
-        # Bottom-Left Confidential Footer
-        div(class = "cl-left-footer-bottom-left",
-          "Confidential, standardized academic quality assurance portal."
-        ),
 
         # Centered Floating Form Container
         div(class = "login-center-container",

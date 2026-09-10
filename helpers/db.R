@@ -347,7 +347,7 @@ get_teacher_assigned_subjects <- function(faculty_id) {
            ROUND(CAST(SUM(CASE WHEN f.rating = 1 THEN 1 ELSE 0 END) AS REAL) / NULLIF(COUNT(f.id), 0) * 100.0, 1) AS pos_pct
     FROM teacher_assignments ta
     JOIN courses c ON ta.course_id = c.id
-    LEFT JOIN feedback_entries f ON f.course_id = c.id
+    LEFT JOIN feedback_entries f ON (f.course_id = c.id AND f.faculty_id = ta.faculty_id)
     WHERE ta.faculty_id = %d
     GROUP BY c.id, c.course_code, c.course_name, c.department, c.semester, c.credits
     ORDER BY c.semester ASC

@@ -59,19 +59,19 @@ adminPortalUI <- function(id) {
   tagList(
     tags$head(
       tags$style(HTML("
-        /* ── ENTERPRISE INSTITUTIONAL SYSTEM ────────────────────────────────── */
+        /* ── CLEAN STANDARD ENTERPRISE INSTITUTIONAL SYSTEM ───────────────────── */
         .gw-app {
           display: flex;
           min-height: 100vh;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-          background-color: #f8fafc;
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+          background: #f8fafc;
           color: #0f172a;
-          font-size: 0.9375rem;
+          font-size: 0.875rem;
         }
 
         /* ── SIDEBAR ─────────────────────────────────────────────────────────── */
         .gw-sidebar {
-          width: 260px;
+          width: 250px;
           background: #ffffff;
           color: #0f172a;
           display: flex;
@@ -81,10 +81,9 @@ adminPortalUI <- function(id) {
           top: 0; bottom: 0; left: 0;
           z-index: 100;
           border-right: 1px solid #e2e8f0;
-          box-shadow: 1px 0 3px rgba(0, 0, 0, 0.03);
         }
         .gw-sidebar-brand {
-          padding: 20px 20px;
+          padding: 18px 20px;
           display: flex;
           align-items: center;
           gap: 12px;
@@ -92,21 +91,21 @@ adminPortalUI <- function(id) {
           background: #ffffff;
         }
         .gw-brand-icon {
-          width: 38px; height: 38px;
+          width: 36px; height: 36px;
           background: #4d6b1e;
-          border-radius: 8px;
+          border-radius: 6px;
           display: flex; align-items: center; justify-content: center;
           color: #ffffff;
           flex-shrink: 0;
         }
         .gw-brand-name {
           font-weight: 700;
-          font-size: 1.05rem;
+          font-size: 1rem;
           color: #0f172a;
-          letter-spacing: -0.02em;
+          letter-spacing: -0.01em;
           line-height: 1.2;
         }
-        .gw-brand-sub { font-size: 0.75rem; color: #64748b; margin-top: 2px; }
+        .gw-brand-sub { font-size: 0.75rem; color: #64748b; margin-top: 1px; font-weight: 500; }
 
         /* Nav links */
         .gw-nav {
@@ -121,14 +120,14 @@ adminPortalUI <- function(id) {
           font-weight: 700;
           color: #94a3b8;
           text-transform: uppercase;
-          letter-spacing: 0.08em;
-          padding: 12px 14px 6px 14px;
+          letter-spacing: 0.06em;
+          padding: 12px 10px 6px 10px;
         }
         .gw-nav-btn {
           display: flex;
           align-items: center;
           gap: 10px;
-          padding: 9px 12px;
+          padding: 8px 12px;
           border-radius: 6px;
           color: #475569;
           font-size: 0.875rem;
@@ -138,23 +137,22 @@ adminPortalUI <- function(id) {
           cursor: pointer;
           width: 100%;
           text-align: left;
-          transition: all 0.15s ease;
+          transition: background-color 0.15s ease, color 0.15s ease;
         }
         .gw-nav-btn:hover {
           background: #f1f5f9;
           color: #0f172a;
         }
         .gw-nav-btn.active {
-          background: #f0f5e6 !important;
-          color: #4d6b1e !important;
+          background: #4d6b1e !important;
+          color: #ffffff !important;
           font-weight: 600;
-          border-left: 3px solid #4d6b1e;
         }
-        .gw-nav-btn.active svg { stroke: #4d6b1e !important; }
+        .gw-nav-btn.active svg { stroke: #ffffff !important; }
 
         /* Sidebar user footer */
         .gw-sidebar-user {
-          padding: 16px 18px;
+          padding: 14px 16px;
           border-top: 1px solid #e2e8f0;
           display: flex;
           align-items: center;
@@ -164,7 +162,7 @@ adminPortalUI <- function(id) {
         .gw-user-info { display: flex; flex-direction: column; gap: 1px; }
         .gw-user-name {
           font-weight: 600;
-          font-size: 0.875rem;
+          font-size: 0.84rem;
           color: #0f172a;
         }
         .gw-user-role {
@@ -176,12 +174,12 @@ adminPortalUI <- function(id) {
         .gw-teacher-badge {
           display: inline-flex;
           align-items: center;
-          background: #f1f5f9;
-          color: #4d6b1e;
+          background: #f0f5e6;
+          color: #3d5516;
           font-weight: 600;
           padding: 2px 8px;
           border-radius: 4px;
-          border: 1px solid #e2e8f0;
+          border: 1px solid #c8dba0;
           font-size: 0.75rem;
         }
         .gw-teacher-badge-none {
@@ -197,7 +195,7 @@ adminPortalUI <- function(id) {
 
         /* ── MAIN CONTENT CANVAS ─────────────────────────────────────────── */
         .gw-main {
-          margin-left: 260px;
+          margin-left: 250px;
           flex: 1;
           display: flex;
           flex-direction: column;
@@ -217,14 +215,14 @@ adminPortalUI <- function(id) {
           z-index: 90;
         }
         .gw-header-title {
-          font-size: 1.25rem;
+          font-size: 1.2rem;
           font-weight: 700;
           color: #0f172a;
           margin: 0;
-          letter-spacing: -0.02em;
+          letter-spacing: -0.01em;
         }
         .gw-header-sub {
-          font-size: 0.8125rem;
+          font-size: 0.8rem;
           color: #64748b;
           margin: 2px 0 0 0;
         }
@@ -240,14 +238,14 @@ adminPortalUI <- function(id) {
           align-items: center;
           gap: 6px;
           background: #ffffff;
-          border: 1px solid #e2e8f0;
+          border: 1px solid #cbd5e1;
           border-radius: 6px;
           padding: 4px 10px;
         }
         .gw-filter-item label, .gw-filter-item .control-label {
           margin: 0 !important;
-          font-size: 0.75rem !important;
-          font-weight: 600 !important;
+          font-size: 0.72rem !important;
+          font-weight: 700 !important;
           color: #64748b !important;
           text-transform: uppercase !important;
           letter-spacing: 0.04em !important;
@@ -265,16 +263,16 @@ adminPortalUI <- function(id) {
 
         /* Scope Bar */
         .gw-scope-bar {
-          padding: 12px 28px 0 28px;
+          padding: 14px 28px 0 28px;
           display: flex;
           align-items: center;
           gap: 8px;
         }
         .gw-scope-badge {
           display: inline-flex; align-items: center; gap: 4px;
-          background: #f1f5f9; color: #334155;
+          background: #ffffff; color: #334155;
           font-size: 0.75rem; font-weight: 600;
-          padding: 3px 9px; border-radius: 4px;
+          padding: 3px 8px; border-radius: 4px;
           border: 1px solid #e2e8f0;
         }
 
@@ -291,7 +289,6 @@ adminPortalUI <- function(id) {
           border-radius: 8px;
           padding: 20px 22px;
           margin-bottom: 20px;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.03);
         }
         .gw-card-title {
           font-size: 0.9375rem;
@@ -321,8 +318,7 @@ adminPortalUI <- function(id) {
           display: flex;
           flex-direction: column;
           gap: 6px;
-          box-shadow: 0 1px 2px rgba(0,0,0,0.02);
-          border-left: 3px solid #4d6b1e;
+          border-left: 4px solid #4d6b1e;
         }
         .gw-kpi-card.tot { border-left-color: #4d6b1e; }
         .gw-kpi-card.pos { border-left-color: #059669; }
@@ -367,8 +363,8 @@ adminPortalUI <- function(id) {
           border: 1px solid #e2e8f0;
           background: #ffffff;
         }
-        .gw-highlight-card.top { border-left: 3px solid #059669; }
-        .gw-highlight-card.bottom { border-left: 3px solid #dc2626; }
+        .gw-highlight-card.top { border-left: 4px solid #059669; }
+        .gw-highlight-card.bottom { border-left: 4px solid #dc2626; }
 
         /* Dept ranking rows */
         .gw-dept-row {
@@ -379,6 +375,7 @@ adminPortalUI <- function(id) {
           border-radius: 6px;
           margin-bottom: 6px;
           border: 1px solid #f1f5f9;
+          background: #ffffff;
         }
         .gw-dept-row:hover { background: #f8fafc; border-color: #e2e8f0; }
         .gw-dept-rank {
@@ -399,7 +396,7 @@ adminPortalUI <- function(id) {
         }
         .gw-improve-card {
           border: 1px solid #e2e8f0;
-          border-radius: 8px;
+          border-radius: 6px;
           padding: 12px 16px;
           background: #ffffff;
           width: 100%;
@@ -482,7 +479,7 @@ adminPortalUI <- function(id) {
         /* Explorer Pill Filters */
         .gw-pill-btn {
           background: #f1f5f9;
-          border: 1px solid #e2e8f0;
+          border: 1px solid #cbd5e1;
           border-radius: 4px;
           padding: 4px 10px;
           font-size: 0.75rem;
@@ -495,6 +492,26 @@ adminPortalUI <- function(id) {
           background: #4d6b1e;
           color: #ffffff;
           border-color: #4d6b1e;
+        }
+
+        /* DataTables Custom Polish */
+        table.dataTable thead th {
+          background-color: #f8fafc !important;
+          color: #475569 !important;
+          font-size: 0.72rem !important;
+          font-weight: 700 !important;
+          text-transform: uppercase !important;
+          letter-spacing: 0.04em !important;
+          border-bottom: 1px solid #e2e8f0 !important;
+          padding: 8px 12px !important;
+        }
+        table.dataTable tbody td {
+          padding: 8px 12px !important;
+          font-size: 0.84rem !important;
+          border-bottom: 1px solid #f1f5f9 !important;
+        }
+        table.dataTable tbody tr:hover {
+          background-color: #f8fafc !important;
         }
 
         /* Responsive */
@@ -823,16 +840,6 @@ adminPortalServer <- function(id, user, logout_trigger) {
           uiOutput(ns("ai_insights_ui"))
         ),
 
-        # Department Submission Readiness Tracker
-        div(class = "gw-card",
-          div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;",
-            p(class = "gw-card-title", style = "margin:0;", "Department Feedback Submission Readiness Tracker"),
-            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "College-Wide Quota Tracking")
-          ),
-          p(class = "gw-card-sub", "Monitor which engineering departments have met evaluation readiness vs pending submissions"),
-          DT::dataTableOutput(ns("dept_readiness_table"))
-        ),
-
         # Most Positive & Most Negative Cards
         div(style = "display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:20px;",
           div(class = "gw-card", style = "margin-bottom:0;",
@@ -860,8 +867,8 @@ adminPortalServer <- function(id, user, logout_trigger) {
             plotlyOutput(ns("chart_pie"), height = "280px")
           ),
           div(class = "gw-card", style = "margin-bottom:0;",
-            p(class = "gw-card-title", "Sentiment Over Time"),
-            p(class = "gw-card-sub", "Monthly chronological volume and polarity trend"),
+            p(class = "gw-card-title", "Department Net Sentiment Index"),
+            p(class = "gw-card-sub", "Net sentiment score (% Positive minus % Negative) across departments"),
             plotlyOutput(ns("chart_time"), height = "280px")
           )
         ),
@@ -891,37 +898,8 @@ adminPortalServer <- function(id, user, logout_trigger) {
         # FACULTY IMPROVEMENT TRACKER
         div(class = "gw-card",
           p(class = "gw-card-title", "Faculty Performance Trajectory"),
-          p(class = "gw-card-sub", "Tracking individual faculty rating evolution across consecutive semesters"),
-          div(style = "display:grid; grid-template-columns: 1fr 1.2fr; gap:20px;",
-            div(
-              p(style = "font-weight:600; font-size:0.84rem; color:#0f172a; margin-bottom:8px;", "Faculty Progress Summary"),
-              uiOutput(ns("teacher_improvement_leaderboard_ui"))
-            ),
-            div(
-              div(style = "display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;",
-                p(style = "font-weight:600; font-size:0.84rem; color:#0f172a; margin:0;", "Individual Trajectory Inspector"),
-                div(style = "display:flex; gap:6px; align-items:center;",
-                  selectInput(ns("inspector_dept_filter"), label = NULL, choices = c("All Departments" = "all"), width = "150px"),
-                  selectInput(ns("teacher_select_inspector"), label = NULL, choices = c("Select Faculty" = ""), width = "170px")
-                )
-              ),
-              uiOutput(ns("teacher_inspector_badge_ui")),
-              plotlyOutput(ns("chart_teacher_trajectory"), height = "260px")
-            )
-          )
-        ),
-
-        # SUBJECT & ASPECT SATISFACTION TRAJECTORY
-        div(class = "gw-card",
-          p(class = "gw-card-title", "Feedback Dimension Improvement Trajectory"),
-          p(class = "gw-card-sub", "Satisfaction trends across Teaching, Labs, Exams, Content, Library and Extracurriculars"),
-          div(style = "display:grid; grid-template-columns: 1.4fr 1fr; gap:20px;",
-            plotlyOutput(ns("chart_subject_trends"), height = "340px"),
-            div(
-              p(style = "font-weight:600; font-size:0.84rem; color:#0f172a; margin-bottom:8px;", "Dimension Delta Summary"),
-              uiOutput(ns("subject_delta_summary_ui"))
-            )
-          )
+          p(class = "gw-card-sub", "Tracking overall faculty rating progress summary across consecutive semesters"),
+          uiOutput(ns("teacher_improvement_leaderboard_ui"))
         ),
 
         # Department Ranking Breakdown
@@ -934,13 +912,13 @@ adminPortalServer <- function(id, user, logout_trigger) {
           )
         ),
 
-        # Faculty 4-Subject Allocation Registry
+        # Faculty 4-5 Subject Allocation Registry
         div(class = "gw-card",
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;",
-            p(class = "gw-card-title", style = "margin:0;", "Faculty 4-Subject Allocation & Performance Registry"),
-            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "Institutional 4-Subject Allocation Rule")
+            p(class = "gw-card-title", style = "margin:0;", "Faculty 4–5 Subject Allocation & Performance Registry"),
+            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "Institutional 4–5 Subject Allocation Rule")
           ),
-          p(class = "gw-card-sub", "Verified academic subject allocations (4 subjects assigned per faculty instructor) and evaluation metrics"),
+          p(class = "gw-card-sub", "Verified academic subject allocations (4–5 subjects assigned per faculty instructor) and evaluation metrics"),
           DT::dataTableOutput(ns("faculty_allocations_table"))
         )
       )
@@ -949,6 +927,19 @@ adminPortalServer <- function(id, user, logout_trigger) {
     # ── 3. EXPLORER TAB VIEW ──────────────────────────────────────────────────
     render_explorer_tab <- function() {
       tagList(
+        # SUBJECT & ASPECT SATISFACTION TRAJECTORY (MOVED TO EXPLORER)
+        div(class = "gw-card",
+          p(class = "gw-card-title", "Feedback Dimension Improvement Trajectory"),
+          p(class = "gw-card-sub", "Satisfaction trends across Teaching, Labs, Exams, Content, Library and Extracurriculars"),
+          div(style = "display:grid; grid-template-columns: 1.4fr 1fr; gap:20px;",
+            plotlyOutput(ns("chart_subject_trends"), height = "340px"),
+            div(
+              p(style = "font-weight:600; font-size:0.84rem; color:#0f172a; margin-bottom:8px;", "Dimension Delta Summary"),
+              uiOutput(ns("subject_delta_summary_ui"))
+            )
+          )
+        ),
+
         div(class = "gw-card",
           div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:14px;",
             p(class = "gw-card-title", style = "margin:0;", "Search Student Reviews"),
@@ -1027,11 +1018,14 @@ adminPortalServer <- function(id, user, logout_trigger) {
           DT::dataTableOutput(ns("raw_submissions_table"))
         ),
 
-        # Previous Sentiment Analysis Breakdown
+        # Department Submission Status Tracker (Submitted vs Not Submitted)
         div(class = "gw-card",
-          p(class = "gw-card-title", "Historical Sentiment Analysis & Previous Submissions Breakdown"),
-          p(class = "gw-card-sub", "Distribution of computed sentiment polarity and evaluation scores across all cycles"),
-          plotlyOutput(ns("chart_dataset_sentiment_dist"), height = "300px")
+          div(style = "display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;",
+            p(class = "gw-card-title", style = "margin:0;", "Department Feedback Submission Status"),
+            span(style = "font-size:0.75rem; color:#4d6b1e; font-weight:600; background:#f0f5e6; padding:3px 8px; border-radius:4px; border:1px solid #c8dba0;", "Submitted vs Not Submitted")
+          ),
+          p(class = "gw-card-sub", "Total submitted and not submitted feedback counts across departments"),
+          DT::dataTableOutput(ns("dept_readiness_table"))
         )
       )
     }
@@ -1432,37 +1426,74 @@ adminPortalServer <- function(id, user, logout_trigger) {
         )
     })
 
-    # ── CRITICAL TIME-SERIES FIX: Sentiment Over Time (Strict Chronological Ordering)
+    # ── Department Net Sentiment Index (Horizontal Bar Chart) ────────────────
     output$chart_time <- renderPlotly({
-      df <- raw_df()
-      if (nrow(df) == 0) return(plot_ly())
+      df <- filtered_df()
+      if (is.null(df) || nrow(df) == 0) return(plot_ly())
 
-      dept <- input$admin_dept_filter
-      if (!is.null(dept) && dept != "all") df <- df[!is.na(df$teacher_dept) & df$teacher_dept == dept, ]
+      # Clean department labels
+      df$dept_clean <- ifelse(is.na(df$teacher_dept) | df$teacher_dept == "", "Unspecified", df$teacher_dept)
 
-      df$yr_mon <- format(as.POSIXct(df$created_at), "%b %Y")
-      df$yr_mon_order <- format(as.POSIXct(df$created_at), "%Y-%m")
+      df$pos <- ifelse(!is.na(df$rating) & df$rating == 1, 1L, 0L)
+      df$neu <- ifelse(!is.na(df$rating) & df$rating == 0, 1L, 0L)
+      df$neg <- ifelse(!is.na(df$rating) & df$rating == -1, 1L, 0L)
 
-      months_df <- aggregate(cbind(pos = rating == 1, neu = rating == 0, neg = rating == -1) ~ yr_mon + yr_mon_order, data = df, FUN = sum)
-      months_df <- months_df[order(months_df$yr_mon_order), ]
+      dept_df <- aggregate(cbind(pos, neu, neg) ~ dept_clean, data = df, FUN = sum, na.rm = TRUE)
+      dept_df$total <- dept_df$pos + dept_df$neu + dept_df$neg
+      dept_df <- dept_df[dept_df$total > 0, ]
 
-      plot_ly(months_df, x = ~yr_mon, y = ~pos, name = "Positive", type = "scatter", mode = "lines+markers",
-              line = list(color = "#059669", width = 2.5), marker = list(color = "#059669", size = 6)) %>%
-        add_trace(y = ~neu, name = "Neutral", line = list(color = "#d97706", width = 2.5), marker = list(color = "#d97706", size = 6)) %>%
-        add_trace(y = ~neg, name = "Negative", line = list(color = "#dc2626", width = 2.5), marker = list(color = "#dc2626", size = 6)) %>%
+      if (is.null(dept_df) || nrow(dept_df) == 0) return(plot_ly())
+
+      dept_df$pos_pct <- (dept_df$pos / dept_df$total) * 100
+      dept_df$neg_pct <- (dept_df$neg / dept_df$total) * 100
+      dept_df$nss <- round(dept_df$pos_pct - dept_df$neg_pct, 1)
+
+      # Sort from lowest to highest so highest appears at top of horizontal plot
+      dept_df <- dept_df[order(dept_df$nss), ]
+
+      # Color assignment based on Net Sentiment Score
+      dept_df$color <- ifelse(dept_df$nss >= 40, "#059669",
+                              ifelse(dept_df$nss >= 0, "#d97706", "#dc2626"))
+
+      dept_df$nss_num <- as.numeric(dept_df$nss)
+
+      dept_df$hover_text <- sprintf(
+        "<b>%s</b><br>Net Sentiment Index: %+.1f<br>Total Submissions: %d<br>Positive: %.1f%% | Negative: %.1f%%",
+        dept_df$dept_clean, dept_df$nss, dept_df$total, dept_df$pos_pct, dept_df$neg_pct
+      )
+
+      plot_ly(
+        dept_df,
+        x = ~nss_num,
+        y = ~factor(dept_clean, levels = dept_clean),
+        type = "bar",
+        orientation = "h",
+        hoverinfo = "text",
+        hovertext = ~hover_text,
+        marker = list(
+          color = ~color,
+          line = list(color = "rgba(0,0,0,0.1)", width = 1)
+        )
+      ) %>%
         layout(
-          paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+          paper_bgcolor = "rgba(0,0,0,0)",
+          plot_bgcolor = "rgba(0,0,0,0)",
           xaxis = list(
-            title = "",
-            tickangle = -25,
+            title = "Net Sentiment Score (% Pos - % Neg)",
             color = "#64748b",
-            categoryorder = "array",
-            categoryarray = months_df$yr_mon,
-            gridcolor = "rgba(0,0,0,0.05)"
+            range = c(-105, 105),
+            gridcolor = "rgba(0,0,0,0.05)",
+            zeroline = TRUE,
+            zerolinecolor = "#94a3b8",
+            zerolinewidth = 1.5
           ),
-          yaxis = list(title = "Responses", color = "#64748b", gridcolor = "rgba(0,0,0,0.05)"),
-          margin = list(l=40,r=10,t=10,b=45), showlegend = TRUE,
-          legend = list(orientation = "h", x = 0.1, y = 1.15, font = list(color="#475569"))
+          yaxis = list(
+            title = "",
+            color = "#475569",
+            tickfont = list(size = 12)
+          ),
+          margin = list(l = 120, r = 20, t = 15, b = 40),
+          showlegend = FALSE
         )
     })
 
@@ -1612,28 +1643,6 @@ adminPortalServer <- function(id, user, logout_trigger) {
       get_teacher_improvement_metrics()
     })
 
-    observe({
-      fac_df <- get_faculty_list()
-      if (nrow(fac_df) > 0) {
-        depts <- sort(unique(fac_df$department[!is.na(fac_df$department) & fac_df$department != ""]))
-        updateSelectInput(session, "inspector_dept_filter", choices = c("All Departments" = "all", setNames(depts, depts)))
-      }
-    })
-
-    observe({
-      fac_df <- get_faculty_list()
-      sel_dept <- input$inspector_dept_filter
-      if (!is.null(sel_dept) && sel_dept != "all") {
-        fac_df <- fac_df[!is.na(fac_df$department) & fac_df$department == sel_dept, ]
-      }
-      if (nrow(fac_df) > 0) {
-        teachers <- sort(unique(fac_df$name))
-        cur_sel <- input$teacher_select_inspector
-        sel_val <- if (!is.null(cur_sel) && cur_sel %in% teachers) cur_sel else teachers[1]
-        updateSelectInput(session, "teacher_select_inspector", choices = setNames(teachers, teachers), selected = sel_val)
-      }
-    })
-
     output$teacher_improvement_leaderboard_ui <- renderUI({
       df <- teacher_metrics_df()
       if (nrow(df) == 0) return(p("No faculty feedback data available."))
@@ -1670,14 +1679,14 @@ adminPortalServer <- function(id, user, logout_trigger) {
       if (is.null(summary_df) || nrow(summary_df) == 0) return(p("No metrics computed."))
 
       summary_df <- summary_df[order(-summary_df$delta), ]
-      top_teachers <- head(summary_df, 6)
+      top_teachers <- head(summary_df, 8)
 
       cards <- lapply(seq_len(nrow(top_teachers)), function(i) {
         r <- top_teachers[i, ]
         delta_str <- sprintf("%s%.1f%%", if (r$delta >= 0) "+" else "", r$delta)
         badge_cls <- if (r$delta > 5) "gw-tag good" else if (r$delta < -5) "gw-tag critical" else "gw-tag moderate"
 
-        div(style = "padding:9px 12px; border:1px solid #e2e8f0; border-radius:6px; margin-bottom:6px; background:#fff; display:flex; justify-content:space-between; align-items:center;",
+        div(style = "padding:10px 14px; border:1px solid #e2e8f0; border-radius:6px; background:#fff; display:flex; justify-content:space-between; align-items:center;",
           div(
             div(style = "font-weight:600; font-size:0.84rem; color:#0f172a;", r$teacher_name),
             div(style = "font-size:0.75rem; color:#64748b;", sprintf("%s · %d sems", r$teacher_dept, r$sems_covered))
@@ -1689,73 +1698,9 @@ adminPortalServer <- function(id, user, logout_trigger) {
         )
       })
 
-      tagList(cards)
-    })
-
-    output$teacher_inspector_badge_ui <- renderUI({
-      sel_t <- input$teacher_select_inspector
-      df <- teacher_metrics_df()
-      if (is.null(sel_t) || sel_t == "" || nrow(df) == 0) return(NULL)
-
-      sub <- df[df$teacher_name == sel_t, ]
-      if (nrow(sub) == 0) return(NULL)
-
-      sub$sem_num <- as.integer(gsub("[^0-9]", "", sub$semester))
-      sub <- sub[order(sub$sem_num), ]
-      
-      first_pos <- sub$pos_pct[1]
-      last_pos  <- sub$pos_pct[nrow(sub)]
-      delta     <- last_pos - first_pos
-      avg_rat   <- mean(sub$avg_rating)
-      tot_fbs   <- sum(sub$total_responses)
-
-      status_msg <- if (delta >= 10) "Significant Positive Gain"
-                    else if (delta >= 0) "Consistent Performance"
-                    else "Needs Targeted Support"
-
-      div(style = "background:#ffffff; border:1px solid #e2e8f0; border-radius:6px; padding:10px 14px; margin-bottom:12px; font-size:0.8rem;",
-        div(style = "display:flex; justify-content:space-between; align-items:center;",
-          span(style = "font-weight:700; color:#0f172a; font-size:0.875rem;", sel_t),
-          span(style = "font-weight:600; color:#4d6b1e;", status_msg)
-        ),
-        div(style = "display:grid; grid-template-columns:repeat(3,1fr); gap:8px; margin-top:6px; color:#475569;",
-          div(span("Sem 1 Positivity: "), tags$b(sprintf("%.1f%%", first_pos))),
-          div(span("Latest Positivity: "), tags$b(sprintf("%.1f%%", last_pos))),
-          div(span("Net Delta: "), tags$b(style = if (delta >= 0) "color:#059669;" else "color:#dc2626;", sprintf("%s%.1f%%", if (delta>=0) "+" else "", delta)))
-        )
+      div(style = "display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:12px;",
+        cards
       )
-    })
-
-    output$chart_teacher_trajectory <- renderPlotly({
-      sel_t <- input$teacher_select_inspector
-      df <- teacher_metrics_df()
-      if (is.null(sel_t) || sel_t == "" || nrow(df) == 0) return(plot_ly())
-
-      sub <- df[df$teacher_name == sel_t, ]
-      if (nrow(sub) == 0) return(plot_ly())
-
-      sub$sem_num <- as.integer(gsub("[^0-9]", "", sub$semester))
-      sub <- sub[order(sub$sem_num), ]
-
-      plot_ly(sub, x = ~semester, y = ~pos_pct, type = "scatter", mode = "lines+markers",
-              name = "Positivity %", line = list(color = "#4d6b1e", width = 2.5),
-              marker = list(color = "#4d6b1e", size = 7)) %>%
-        add_trace(y = ~avg_rating * 20, name = "Avg Rating (x20)", line = list(color = "#059669", width = 2, dash = "dash"),
-                  marker = list(color = "#059669", size = 5)) %>%
-        layout(
-          paper_bgcolor = "rgba(0,0,0,0)", plot_bgcolor = "rgba(0,0,0,0)",
-          xaxis = list(
-            title = "",
-            color = "#64748b",
-            categoryorder = "array",
-            categoryarray = sub$semester,
-            gridcolor = "rgba(0,0,0,0.05)"
-          ),
-          yaxis = list(title = "Percentage (%)", range = c(0, 100), color = "#64748b", gridcolor = "rgba(0,0,0,0.05)"),
-          margin = list(l = 35, r = 10, t = 10, b = 35),
-          showlegend = TRUE,
-          legend = list(orientation = "h", x = 0, y = 1.15, font = list(color="#475569"))
-        )
     })
 
     # ── ANALYTICS: SUBJECT & ASPECT SATISFACTION TRAJECTORY ───────────────────
@@ -1959,22 +1904,20 @@ adminPortalServer <- function(id, user, logout_trigger) {
     # `%||%` helper
     `%||%` <- function(a, b) if (!is.null(a) && !is.na(a) && a != "") a else b
 
-    # ── READINESS TRACKER TABLE ──────────────────────────────────────────────
+    # ── DEPARTMENT SUBMISSION STATUS TABLE (SUBMITTED VS NOT SUBMITTED) ───────
     output$dept_readiness_table <- DT::renderDataTable({
       df <- get_department_readiness_tracker()
-      if (is.null(df) || nrow(df) == 0) return(data.frame(Message = "No readiness records found."))
+      if (is.null(df) || nrow(df) == 0) return(data.frame(Message = "No submission records found."))
 
-      df$Progress <- sprintf("%d / %d (%s%%)", df$submitted_count, df$target_quota, df$completion_pct)
-      
-      out <- df[, c("department", "target_quota", "submitted_count", "pending_count", "completion_pct", "status")]
-      names(out) <- c("Department", "Target Quota", "Collected Responses", "Pending Responses", "Completion %", "Readiness Status")
+      out <- df[, c("department", "submitted_count", "pending_count")]
+      names(out) <- c("Department", "Submitted", "Not Submitted")
       
       DT::datatable(
         out,
         options = list(
           pageLength = 8,
           dom = 't',
-          ordering = FALSE
+          ordering = TRUE
         ),
         rownames = FALSE
       )
